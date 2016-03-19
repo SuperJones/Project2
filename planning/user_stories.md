@@ -9,7 +9,7 @@
 
 #### Silver:
 - As a user, I should be able to sign in, so that I can upload a photo, create a username, password, and choose a weapon.
-- As a user, I should not be able to edit other peoples pages, for security purposes.
+- As a user, I should NOT be able to edit other peoples pages, for security purposes.
 - As a user, I should be able to upgrade my weapon, so that I can win more duals.
 
 
