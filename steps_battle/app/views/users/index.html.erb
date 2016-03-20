@@ -8,9 +8,10 @@
         <th>Username</th>
         <th>Steps</th>
     </tr>
+    <%count = 0%>
     <% @users.sort_by{|u| u.steps}.reverse.each do |u| %>
         <tr>
-            <td>1</td>
+            <td><%= count += 1 %></td>
             <td><%= u.username %></td>
             <td><%= u.steps %></td>
         </tr>
