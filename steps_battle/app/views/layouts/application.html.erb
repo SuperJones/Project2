@@ -5,11 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='../../../bootstrap-3.3.6-dist/css/bootstrap.css' rel='stylesheet'>
 </head>
 <body>
-<h1><%= link_to "Steps Battle", root_url %></h1>
+    <div class='container'>
+        <h1><%= link_to "Steps Battle", root_url %></h1>
 
-<%= yield %>
+        <%= yield %>
 
+    </div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<script src='../../../bootstrap-3.3.6-dist/js/bootstrap.js'></script>
 </body>
 </html>
