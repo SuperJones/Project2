@@ -10,10 +10,12 @@
     </tr>
     <%count = 0%>
     <% @users.sort_by{|u| u.steps}.reverse.each do |u| %>
-        <tr>
-            <td><%= count += 1 %></td>
-            <td><%= u.username %></td>
-            <td><%= u.steps %></td>
-        </tr>
+        <% if count < 3%>
+            <tr>
+                <td><%= count += 1 %></td>
+                <td><%= u.username %></td>
+                <td><%= u.steps %></td>
+            </tr>
+        <% end %>
     <% end %>
 </table>
