@@ -9,9 +9,15 @@
 <body>
     <div class='container'>
         <h1><%= link_to "Steps Battle", root_url %></h1>
+        <button>Sign Up</button>
+        <button>Sign In</button>
+        <input type="search" name="usersearch" placeholder="Enter a Username">
+        <input type="submit" value="Search">
+    </div>
 
+
+    <div class='container-fluid'>
         <%= yield %>
-
     </div>
 </body>
 </html>
