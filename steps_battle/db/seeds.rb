@@ -5,18 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require_relative './user_data.rb'
 
-require_relative "../models/user"
-require_relative "../models/item"
+User.destroy_all
 
-maria = User.create({username: "mgutierrez0", steps: 314})
-mike = User.create({username: "mcoleman1", steps: 218})
-rick = User.create({username: "rwatson2", steps: 971})
-sarah = User.create({username: "spalmer3", steps: 805})
-pam = User.create({username: "pgarza4", steps: 259})
+user_data = get_user_data()
 
-Item.create({name: "sword", type: "weapon", user: maria})
-Item.create({name: "bow & arrow", type: "weapon", user: mike})
-Item.create({name: "staff", type: "weapon", user: rick})
-Item.create({name: "sword", type: "weapon", user: sarah})
-Item.create({name: "staff", type: "weapon", user: pam})
+user_data.each do |user|
+    User.create!({
+      username:     user[:username],
+      steps:        user[:steps.to_i]
+    })
+end
