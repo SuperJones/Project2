@@ -13,7 +13,7 @@
         <% if count < 3%>
             <tr>
                 <td><%= count += 1 %></td>
-                <td><%= u.username %></td>
+                <td><%= link_to u.username, user_path(u) %></td>
                 <td><%= u.steps %></td>
             </tr>
         <% end %>
