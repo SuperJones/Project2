@@ -1,4 +1,14 @@
-<h3><%= @user.username%></h3>
-<p><%= @user.steps%></p>
+
 
 <!-- FIXME: How do I make this page show, in the "Stuff over Here" column -->
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3 col-xs-5'>
+            <h3>Stuff Over here.</h3>
+            <h3><%= @user.username%></h3>
+            <p><%= @user.steps%></p>
+        </div>
+        <div class='col-sm-8 col-xs-6'>
+        </div>
+    </div>
+</div>
