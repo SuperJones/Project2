@@ -1,0 +1,25 @@
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3 col-xs-5'>
+            <h3>Stuff Over here.</h3>
+            <h3><%= @user.username%></h3>
+            <p><%= @user.steps%></p>
+        </div>
+        <div class='col-sm-8 col-xs-6'>
+            <h2>Pick Your Weapon</h2>
+            <p>You will always have the same weapon so choose wisely.</p>
+
+            <%= form_for @item do |f| %>
+                <div>
+                    <%= f.label "Weapon"%>
+                    <%= f.select(:weapon_kind, ["Sword", "Bow&Arrow", "Staff"]%>
+                </div>
+
+                <div>
+                    <%= f.submit %>
+                </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
