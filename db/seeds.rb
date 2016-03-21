@@ -3,17 +3,14 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create([{ name: 'Chicago' } { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require_relative './user_data.rb'
+
 
 User.destroy_all
 
-user_data = get_user_data()
-
-user_data.each do |user|
-    User.create!({
-      username:     user[:username],
-      steps:        user[:steps.to_i]
-    })
-end
+  maria = User.create!({username: "mgutierrez0",steps: 314})
+  mike = User.create!({username: "mcoleman1",steps: 218,})
+  rick = User.create!({username: "rwatson2",steps: 971})
+  sasha = User.create!({username: "spalmer3",steps: 805})
+  pam = User.create!({username: "pgarza4",steps: 259})

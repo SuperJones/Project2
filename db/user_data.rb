@@ -1,4 +1,4 @@
-def get_user_data
+
   user_data = {
     "maria" => {
                     username: "mgutierrez0",
@@ -21,5 +21,3 @@ def get_user_data
                     steps: 259
                   }
     }
-  return user_data
-end
