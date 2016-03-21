@@ -5,7 +5,10 @@
     <div class='row'>
         <div class='col-sm-3 col-xs-5'>
             <h3><%= @user.username%></h3>
-            <p><%= @user.steps%></p>
+            <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
+            <p>Steps: <%= @user.steps%></p>
+
+
             <input type="search" name="usersearch" placeholder="Enter a Username">
             <input type="submit" value="Search">
         </div>

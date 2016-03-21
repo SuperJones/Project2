@@ -1,0 +1,36 @@
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3 col-xs-5'>
+            <h3><%= @user.username%></h3>
+            <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
+            <p>Steps: <%= @user.steps%></p>
+
+
+            <input type="search" name="usersearch" placeholder="Enter a Username">
+            <input type="submit" value="Search">
+        </div>
+        <div class='col-sm-8 col-xs-6'>
+            
+            <h2>Update Your profile</h2>
+
+            <%= form_for @user do |f|%>
+                <div>
+                    <%= f.label "Email:"%>
+                    <%= f.text_field :email%>
+                </div>
+                <div>
+                    <%= f.label "Photo URL:" %>
+                    <%= f.text_field :photo_url %>
+                </div>
+                <div>
+                    <%= f.submit %>
+                </div>
+            <% end %>
+
+            <%= form_for @user, method: :delete do |f| %>
+                <%= f.submit "Delete Account?"%>
+            <% end %>
+
+        </div>
+    </div>
+</div>
