@@ -1,0 +1,36 @@
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3 col-xs-5'>
+            <h3>Stuff Over here.</h3>
+            <h3><%= @user.username%></h3>
+            <p><%= @user.steps%></p>
+        </div>
+        <div class='col-sm-8 col-xs-6'>
+            <h2>Welcome to Steps Battle!</h2>
+            <h3>Sign up</h3>
+
+            <%= form_for @user do |f| %>
+                <div>
+                    <%= f.label "Email:"%>
+                    <%= f.text_field :email%>
+                </div>
+                <div>
+                    <%= f.label "Username:" %>
+                    <%= f.text_field :username %>
+                </div>
+                <div>
+                    <%= f.label "Photo URL:" %>
+                    <%= f.text_field :photo_url %>
+                </div>
+                <div>
+                    <%= f.label "Steps From Today:" %>
+                    <%= f.text_field :steps %>
+                </div>
+                <div>
+                    <%= f.submit %>
+                </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>

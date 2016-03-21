@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320020246) do
+ActiveRecord::Schema.define(version: 20160321161305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160320020246) do
   create_table "users", force: :cascade do |t|
     t.string  "username"
     t.integer "steps"
+    t.string  "photo_url"
+    t.string  "email"
   end
 
   add_foreign_key "items", "users"
