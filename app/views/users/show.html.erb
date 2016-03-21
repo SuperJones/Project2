@@ -19,7 +19,8 @@
             <table class="table">
                 <% @user.items.each do |item|%>
                     <tr>
-                        <td rowspan="2"><%= item.photo_url%></td>
+                        <td rowspan="2">
+                            <%= image_tag "#{item.weapon_kind}.png"%></td>
                         <td><%= item.weapon_kind%></td>
                         <td><%= item.hp%></td>
                     </tr>

@@ -18,5 +18,5 @@ pam = User.create!({username: "pgarza4",steps: 259, photo_url: "thisispam.png", 
 Item.create({weapon_kind: "sword", user: maria})
 Item.create({weapon_kind: "sword", user: mike})
 Item.create({weapon_kind: "staff", user: rick})
-Item.create({weapon_kind: "bow & arrow", user: sasha})
+Item.create({weapon_kind: "arrow", user: sasha})
 Item.create({weapon_kind: "staff", user: pam})
