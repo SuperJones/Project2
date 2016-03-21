@@ -3,17 +3,28 @@
 <!-- FIXME: How do I make this page show, in the "Stuff over Here" column -->
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-sm-3 col-xs-5'>
-            <%= image_tag @user.photo_url, size: "239x360"%>
-            <h3><%= @user.username%></h3>
-            <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
-            <p>Steps: <%= @user.steps%></p>
+        <div class='col-sm-3 col-xs-5 profile'>
+
+                <%= image_tag @user.photo_url, size: "200x200"%>
+                <h3><%= @user.username%></h3>
+                <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
+                <p>Steps: <%= @user.steps%></p>
 
 
             <input type="search" name="usersearch" placeholder="Enter a Username">
             <input type="submit" value="Search">
         </div>
         <div class='col-sm-8 col-xs-6'>
+            <h2>Inventory</h2>
+            <table class="table">
+                <% @user.items.each do |item|%>
+                    <tr>
+                        <td rowspan="2"><%= item.photo_url%></td>
+                        <td><%= item.weapon_kind%></td>
+                        <td><%= item.hp%></td>
+                    </tr>
+                <% end%>
+            </table>
         </div>
     </div>
 </div>
