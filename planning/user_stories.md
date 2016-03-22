@@ -4,7 +4,7 @@
 #### Bronze:
 + As a user, I should be able to see the leader board on the main page, so that I can see the top users.
 + As a user, I want to have a profile page, so that I can see my step stats and inventory.
-- As a user, I should be able to sign in, so that I can upload a photo, create a username, and choose a weapon.
++ As a user, I should be able to sign up, so that I can upload a photo, create a username, and choose a weapon.
 
 
 #### Silver:

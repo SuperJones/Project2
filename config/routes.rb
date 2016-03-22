@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users do
       resources :items
   end
+  resource :session
 end
 
 
@@ -25,3 +26,10 @@ end
 #                PATCH  /users/:id(.:format)                     users#update
 #                PUT    /users/:id(.:format)                     users#update
 #                DELETE /users/:id(.:format)                     users#destroy
+#        session POST   /session(.:format)                       sessions#create
+#    new_session GET    /session/new(.:format)                   sessions#new
+#   edit_session GET    /session/edit(.:format)                  sessions#edit
+#                GET    /session(.:format)                       sessions#show
+#                PATCH  /session(.:format)                       sessions#update
+#                PUT    /session(.:format)                       sessions#update
+#                DELETE /session(.:format)                       sessions#destroy

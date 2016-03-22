@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+Item.destroy_all
 User.destroy_all
+
 
 maria = User.create!({username: "mgutierrez0",steps: 314, photo_url: "thisismaria.png", email: "mariagutierrez@lollipants.com"})
 mike = User.create!({username: "mcoleman1",steps: 218, photo_url: "thisismike.png", email: "mikecoleman@handsompants.com"})
