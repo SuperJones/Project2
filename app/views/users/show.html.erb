@@ -10,9 +10,9 @@
                 <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
                 <p>Steps: <%= @user.steps%></p>
 
-            <div>
-                <input type="search" name="usersearch" placeholder="Enter a Username">
-                <input type="submit" value="Search" class="glyphicon glyphicon-search">
+            <div class="input-group">
+                <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
+                <span class="input-group-addon" id="basic-addon1">Search</span>
             </div>
 
         </div class="search">
