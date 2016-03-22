@@ -7,15 +7,20 @@ body {
   padding-top: auto;
   background-color: #D4D8D1;
 }
+
 .header-boarder{
     background-color: #2f131f;
-    padding: auto;
+    padding: 0 auto;
+    margin-left: 5px;
+    border-bottom-left-radius: 8px;
+    
 }
 
 .logo a{
     text-decoration: none;
     font-size: 60px;
     color: #AA9A66;
+    padding: 20px;
 }
 .signupin{
     margin: 20px 0;
@@ -24,6 +29,9 @@ body {
 .sidebar{
     background-color: #a8a599;
     height: 800px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .profile{
