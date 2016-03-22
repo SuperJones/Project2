@@ -6,7 +6,7 @@
                     <!-- User Picture and info -->
                 <%= image_tag @user.photo_url, size: "200x200"%>
                 <h3><%= @user.username%></h3>
-                <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
+                <p><%=link_to "Edit Profile", edit_user_path(@user) if @current_user == @user %></p>
                 <p>Steps: <%= @user.steps%></p>
 
                     <!-- Search bar -->
