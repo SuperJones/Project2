@@ -3,17 +3,20 @@
     <div class='row'>
         <div class='col-sm-3 col-xs-5 profile sidebar'>
 
+                    <!-- User Picture and info -->
                 <%= image_tag @user.photo_url, size: "200x200"%>
                 <h3><%= @user.username%></h3>
                 <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
                 <p>Steps: <%= @user.steps%></p>
 
-            <div class="input-group">
+                    <!-- Search bar -->
+            <div class="input-group search">
                 <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
                 <span class="input-group-addon" id="basic-addon1">Search</span>
             </div>
+        </div>
 
-        </div class="search">
+                    <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2>Inventory</h2>
             <table class="table">
@@ -22,10 +25,12 @@
                         <td rowspan="4" ><%= image_tag "#{item.weapon_kind}.png"%></td>
                     </tr>
                     <tr>
-                        <td>Weapon: </td><td><%= item.weapon_kind.capitalize%></td>
+                        <td class="cell-topic">Weapon: </td>
+                        <td><%= item.weapon_kind.capitalize%></td>
                     </tr>
                     <tr>
-                        <td>Weapon HP:</td> <td> 0<%= item.hp%></td>
+                        <td class="cell-topic">Weapon HP:</td>
+                        <td> 0<%= item.hp%></td>
                     </tr>
                 <% end%>
             </table>
