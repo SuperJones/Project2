@@ -4,14 +4,38 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: auto;
+  background-color: #D4D8D1;
+}
+.header-boarder{
+    background-color: #2f131f;
+    padding: auto;
 }
 
 .logo a{
     text-decoration: none;
+    font-size: 60px;
+    color: #AA9A66;
+}
+.signupin{
+    margin: 20px 0;
+}
+
+.sidebar{
+    background-color: #a8a599;
+    height: 800px;
 }
 
 .profile{
-    padding-top: 20px;  
+    padding-top: 20px;
     text-align: center;
+}
+
+.leader{
+    h2{
+        text-align: center;
+    }
+    table{
+        align-content: center;
+    }
 }
