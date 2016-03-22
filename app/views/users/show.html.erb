@@ -1,6 +1,4 @@
 
-
-<!-- FIXME: How do I make this page show, in the "Stuff over Here" column -->
 <div class='container-fluid'>
     <div class='row'>
         <div class='col-sm-3 col-xs-5 profile sidebar'>
@@ -21,10 +19,13 @@
             <table class="table">
                 <% @user.items.each do |item|%>
                     <tr>
-                        <td rowspan="2">
-                            <%= image_tag "#{item.weapon_kind}.png"%></td>
-                        <td><%= item.weapon_kind%></td>
-                        <td><%= item.hp%></td>
+                        <td rowspan="4" ><%= image_tag "#{item.weapon_kind}.png"%></td>
+                    </tr>
+                    <tr>
+                        <td>Weapon: </td><td><%= item.weapon_kind.capitalize%></td>
+                    </tr>
+                    <tr>
+                        <td>Weapon HP:</td> <td> 0<%= item.hp%></td>
                     </tr>
                 <% end%>
             </table>
