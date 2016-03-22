@@ -1,33 +1,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*Colors*/
+
+$navfont: #6C8F79;
+$basefont: #532E26;
+$bodychunks: #C4936D;
+$navbackgrd: #2B211E;
+
 /* universal */
 
 body {
   padding-top: auto;
-  background-color: #D4D8D1;
+  background-color: #D3BA9F;
+  color: $basefont;
 }
 
 .header-boarder{
-    background-color: #2f131f;
+    background-color: $navbackgrd;
     padding: 0 auto;
     margin-left: 5px;
     border-bottom-left-radius: 8px;
-    
+
 }
 
 .logo a{
     text-decoration: none;
     font-size: 60px;
-    color: #AA9A66;
+    font-family: 'Eagle Lake', cursive;
+    color: $navfont;
     padding: 20px;
 }
 .signupin{
-    margin: 20px 0;
+    margin-top: 20px;
+    text-decoration: none;
+    a{
+        color: $navfont;
+    }
 }
 
 .sidebar{
-    background-color: #a8a599;
+    color: $navfont;
+    background-color: $navbackgrd;
     height: 800px;
     border-radius: 8px;
     margin-top: 5px;
@@ -39,11 +53,28 @@ body {
     text-align: center;
 }
 
+.search{
+    margin-top: 20px;
+}
+
+.chunk{
+    background-color: $bodychunks;
+    border-radius: 8px;
+
+}
+
 .leader{
+    margin: 5px 20px;
+
     h2{
         text-align: center;
+        font-family: 'Eagle Lake', cursive;
     }
     table{
         align-content: center;
     }
+}
+
+.inventory{
+    margin: 5px 20px;
 }

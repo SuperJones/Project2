@@ -3,18 +3,20 @@
 <!-- FIXME: How do I make this page show, in the "Stuff over Here" column -->
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-sm-3 col-xs-5 profile'>
+        <div class='col-sm-3 col-xs-5 profile sidebar'>
 
                 <%= image_tag @user.photo_url, size: "200x200"%>
                 <h3><%= @user.username%></h3>
                 <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
                 <p>Steps: <%= @user.steps%></p>
 
+            <div>
+                <input type="search" name="usersearch" placeholder="Enter a Username">
+                <input type="submit" value="Search" class="glyphicon glyphicon-search">
+            </div>
 
-            <input type="search" name="usersearch" placeholder="Enter a Username">
-            <input type="submit" value="Search">
-        </div>
-        <div class='col-sm-6 col-sm-offset-1 col-xs-5'>
+        </div class="search">
+        <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2>Inventory</h2>
             <table class="table">
                 <% @user.items.each do |item|%>

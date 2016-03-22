@@ -1,6 +1,6 @@
 <div class='container-fluid'>
     <div class='row'>
-        <div class='col-sm-3 col-xs-5'>
+        <div class='col-sm-3 col-xs-5 sidebar'>
             <h3><%= @user.username%></h3>
             <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
             <p>Steps: <%= @user.steps%></p>
@@ -10,7 +10,7 @@
             <input type="submit" value="Search">
         </div>
         <div class='col-sm-8 col-xs-6'>
-            
+
             <h2>Update Your profile</h2>
 
             <%= form_for @user do |f|%>
