@@ -17,19 +17,22 @@
             </div>
         </div>
 
-                <!-- Choose weapon if new user -->
-        <% if !@user.inventories.first.weapon%>
-            <ul>
-                <% @weapons.each do |weapon| %>
-                    <li><a href="/users/<%= @user.id%>/add_weapon?weapon_id=<%= weapon.id %>"><%= weapon.weapon_name %></a></li>
-                <% end %>
 
-            </ul>
-        <% end%>
+
 
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2>Inventory</h2>
+            <% if !@user.inventories.first.weapon%>
+                <!-- Choose weapon if new user -->
+                <ul>
+                    <% @weapons.each do |weapon| %>
+                        <li><a href="/users/<%= @user.id%>/add_weapon?weapon_id=<%= weapon.id %>"><%= weapon.weapon_name %></a></li>
+                    <% end %>
+
+                </ul>
+            <% end%>
+            
             <table class="table">
                 <% @user.weapons.each do |weapon|%>
                     <tr>
