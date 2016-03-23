@@ -58,6 +58,17 @@ body {
     box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
 }
 
+.instructions{
+    margin-top: 40px;
+    h4, ol{
+        text-align: center;
+    }
+    ol{
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+}
+
 .profile{
     padding-top: 20px;
     text-align: center;

@@ -44,11 +44,17 @@
             <table class="table">
                 <% @user.weapons.each do |weapon|%>
                     <tr>
-                        <td rowspan="4" ><%= image_tag "#{weapon.weapon_kind}.png"%></td>
+                        <div >
+                        <td rowspan="4" class="pic-border" ><%= image_tag "#{weapon.weapon_kind}.png"%></td>
+                        </div>
                     </tr>
                     <tr>
-                        <td class="cell-topic">Weapon: </td>
+                        <td class="cell-topic">Weapon Type: </td>
                         <td><%= weapon.weapon_kind.capitalize%></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-topic">Weapon Name: </td>
+                        <td><%= weapon.weapon_name.capitalize%></td>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon HP:</td>
