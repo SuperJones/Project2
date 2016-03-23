@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find(params[:id])
+      @weapons = Weapon.limit(3)
   end
 
   def edit
@@ -35,6 +36,13 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.destroy
       redirect_to users_path
+  end
+
+  def add_weapon
+      @user = User.find(params[:id])
+      @weapon = Weapon.find(params[:weapon_id])
+      @user.inventories.first.update(weapon: @weapon)
+      redirect_to @user
   end
 
   private

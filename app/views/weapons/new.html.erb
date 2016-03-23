@@ -8,18 +8,10 @@
         <div class='col-sm-8 col-xs-6'>
             <h2>Pick Your Weapon</h2>
             <p>You will always have the same weapon so choose wisely.</p>
+            <%= link_to "Sword", user_path %>
+            <%= link_to "Staff", user_path %>
+            <%= link_to "Bow & Arrow", user_path %>
 
-            <%= form_for @weapon do |f| %>
-                <div>
-                    <%= f.label "Weapon"%>
-                    <%= f.select(:weapon_kind, ["Sword", "Bow&Arrow", "Staff"]%>
-                </div>
-
-                <div>
-                    <%= f.submit %>
-                </div>
-
-            <% end %>
         </div>
     </div>
 </div>
