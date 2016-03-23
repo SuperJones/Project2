@@ -8,6 +8,7 @@ $basefont: #532E26;
 $bodychunks: #C4936D;
 $navbackgrd: #2B211E;
 $mainbuttons: #665247;
+$listoptions:  #ad8363;
 
 /* universal */
 
@@ -21,6 +22,8 @@ body {
     background-color: $navbackgrd;
     padding: 0 auto;
     margin-left: 5px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-bottom-left-radius: 8px;
     border-bottom-left-radius: 8px;
 
 }
@@ -31,6 +34,7 @@ body {
     font-family: 'Eagle Lake', cursive;
     color: $navfont;
     padding: 20px;
+    text-shadow: 0px 2px 3px #8b6c62;
 }
 .signupin{
     margin-top: 20px;
@@ -44,9 +48,14 @@ body {
     color: $navfont;
     background-color: $navbackgrd;
     height: 800px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
     margin-top: 5px;
     margin-left: 5px;
+    -webkit-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+    box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
 }
 
 .profile{
@@ -58,10 +67,34 @@ body {
     margin-top: 20px;
 }
 
+
 .chunk{
     background-color: $bodychunks;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
 
+    h2,h4,p,ul{
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul li{
+        background-color: $listoptions;
+        margin: 3px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    a{
+        color:$basefont;
+    }
 }
 
 .leader{
@@ -82,4 +115,9 @@ body {
 
 .cell-topic{
     width: 20%;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: $navfont !important;
+    border-color: $navfont !important;
 }

@@ -12,7 +12,7 @@ User.destroy_all
 Inventory.destroy_all
 
 basicsword = Weapon.create({weapon_kind: "sword", weapon_name: "Wooden Sword", hp: 10})
-basicstaff = Weapon.create({weapon_kind: "staff", weapon_name: "Simple Wooden Stick", hp: 10})
+basicstaff = Weapon.create({weapon_kind: "staff", weapon_name: "Simple Wooden Staff", hp: 10})
 basicarrow = Weapon.create({weapon_kind: "arrow", weapon_name: "Bow and No Tip Arrow", hp: 10})
 
 maria = User.create!({username: "mgutierrez0",steps: 314, photo_url: "thisismaria.png", email: "mariagutierrez@lollipants.com"})

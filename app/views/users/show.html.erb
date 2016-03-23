@@ -8,6 +8,10 @@
                 <h3><%= @user.username%></h3>
                 <p><%=link_to "Edit Profile", edit_user_path(@user) if @current_user == @user %></p>
                 <p>Steps: <%= @user.steps%></p>
+
+                <div>
+                    <button type="button" class="btn btn-primary">Dual!</button>
+                </div>
                 <!-- TODO: There should be a dual button here. -->
 
                     <!-- Search bar -->
@@ -15,6 +19,8 @@
                 <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
                 <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
             </div>
+
+
         </div>
 
 
@@ -22,9 +28,11 @@
 
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
-            <h2>Inventory</h2>
+            <h2 class="choose-weapon">Inventory</h2>
             <% if !@user.inventories.first.weapon%>
                 <!-- Choose weapon if new user -->
+                <h4>Please choose a weapon.</h4>
+                <p>Note: You will not be able to change this later, so choose wisely young warrior.</p>
                 <ul>
                     <% @weapons.each do |weapon| %>
                         <li><a href="/users/<%= @user.id%>/add_weapon?weapon_id=<%= weapon.id %>"><%= weapon.weapon_name %></a></li>
@@ -32,7 +40,7 @@
 
                 </ul>
             <% end%>
-            
+
             <table class="table">
                 <% @user.weapons.each do |weapon|%>
                     <tr>
