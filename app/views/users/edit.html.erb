@@ -1,0 +1,46 @@
+<div class='container-fluid'>
+    <div class='row'>
+
+            <!-- User Picture and info -->
+        <div class='col-sm-3 col-xs-5 sidebar'>
+            <h3><%= @user.username%></h3>
+            <p><%=link_to "Edit Profile", edit_user_path(@user)%></p>
+            <p>Steps: <%= @user.steps%></p>
+
+            <!-- Searh Bar -->
+            <div class="input-group search">
+                <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
+                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+
+            <!-- Edit Profile Form -->
+        <div class='col-sm-8 col-xs-6'>
+
+            <h2>Update Your profile</h2>
+
+            <%= form_for @user do |f|%>
+                <div>
+                    <%= f.label "Email:"%>
+                    <%= f.text_field :email%>
+                </div>
+                <div>
+                    <%= f.label "Create Password:"%>
+                    <%= f.password_field :password%>
+                </div>
+                <div>
+                    <%= f.label "Photo URL:" %>
+                    <%= f.text_field :photo_url %>
+                </div>
+                <div>
+                    <%= f.submit %>
+                </div>
+            <% end %>
+
+            <%= form_for @user, method: :delete do |f| %>
+                <%= f.submit "Delete Account?"%>
+            <% end %>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3 col-xs-5 profile sidebar'>
+
+                    <!-- User Picture and info -->
+                <%= image_tag @user.photo_url, size: "200x200"%>
+                <h3><%= @user.username%></h3>
+                <p><%=link_to "Edit Profile", edit_user_path(@user) if @current_user == @user %></p>
+                <p>Steps: <%= @user.steps%></p>
+
+                    <!-- Search bar -->
+            <div class="input-group search">
+                <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
+                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+
+                    <!-- Inventory -->
+        <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
+            <h2>Inventory</h2>
+            <table class="table">
+                <% @user.items.each do |item|%>
+                    <tr>
+                        <td rowspan="4" ><%= image_tag "#{item.weapon_kind}.png"%></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-topic">Weapon: </td>
+                        <td><%= item.weapon_kind.capitalize%></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-topic">Weapon HP:</td>
+                        <td> 0<%= item.hp%></td>
+                    </tr>
+                <% end%>
+            </table>
+        </div>
+    </div>
+</div>

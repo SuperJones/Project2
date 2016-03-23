@@ -1,0 +1,85 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*Colors*/
+
+$navfont: #6C8F79;
+$basefont: #532E26;
+$bodychunks: #C4936D;
+$navbackgrd: #2B211E;
+$mainbuttons: #665247;
+
+/* universal */
+
+body {
+  padding-top: auto;
+  background-color: #D3BA9F;
+  color: $basefont;
+}
+
+.header-boarder{
+    background-color: $navbackgrd;
+    padding: 0 auto;
+    margin-left: 5px;
+    border-bottom-left-radius: 8px;
+
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 60px;
+    font-family: 'Eagle Lake', cursive;
+    color: $navfont;
+    padding: 20px;
+}
+.signupin{
+    margin-top: 20px;
+    text-decoration: none;
+    a{
+        color: $navfont;
+    }
+}
+
+.sidebar{
+    color: $navfont;
+    background-color: $navbackgrd;
+    height: 800px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.profile{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.search{
+    margin-top: 20px;
+}
+
+.chunk{
+    background-color: $bodychunks;
+    border-radius: 8px;
+
+}
+
+.leader{
+    margin: 5px 20px;
+
+    h2{
+        text-align: center;
+        font-family: 'Eagle Lake', cursive;
+    }
+    table{
+        align-content: center;
+    }
+}
+
+.inventory{
+    margin: 5px 20px;
+}
+
+.cell-topic{
+    width: 20%;
+}

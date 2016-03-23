@@ -1,0 +1,36 @@
+<div class='container-fluid'>
+    <div class='row'>
+            <!-- Side Bar -->
+        <div class='col-sm-3 col-xs-5 sidebar'>
+            <!-- Searh Bar -->
+            <div class="input-group search">
+                <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
+                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </div>
+
+            <!-- Rank Table -->
+        <div class='col-sm-8 col-xs-6 leader chunk'>
+            <h2>Leader Board</h2>
+
+            <table class="table">
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Steps</th>
+                </tr>
+                <%count = 0%>
+                <% @users.sort_by{|u| u.steps}.reverse.each do |u| %>
+                    <% if count < 8%>
+                        <tr>
+                            <td><%= count += 1 %></td>
+                            <td><%= link_to u.username, user_path(u) %></td>
+                            <td><%= u.steps %></td>
+                        </tr>
+                    <% end %>
+                <% end %>
+            </table>
+
+        </div>
+    </div>
+</div>
