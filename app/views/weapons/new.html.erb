@@ -9,7 +9,7 @@
             <h2>Pick Your Weapon</h2>
             <p>You will always have the same weapon so choose wisely.</p>
 
-            <%= form_for @item do |f| %>
+            <%= form_for @weapon do |f| %>
                 <div>
                     <%= f.label "Weapon"%>
                     <%= f.select(:weapon_kind, ["Sword", "Bow&Arrow", "Staff"]%>

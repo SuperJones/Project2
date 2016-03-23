@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Item.destroy_all
+Weapon.destroy_all
 User.destroy_all
 
 
@@ -17,8 +17,8 @@ rick = User.create!({username: "rwatson2",steps: 971, photo_url: "thisisrick.png
 sasha = User.create!({username: "spalmer3",steps: 805, photo_url: "thisissasha.png", email: "sashfierce@sassypants.com"})
 pam = User.create!({username: "pgarza4",steps: 259, photo_url: "thisispam.png", email: "pamgarza@simplepants.com"})
 
-Item.create({weapon_kind: "sword", user: maria})
-Item.create({weapon_kind: "sword", user: mike})
-Item.create({weapon_kind: "staff", user: rick})
-Item.create({weapon_kind: "arrow", user: sasha})
-Item.create({weapon_kind: "staff", user: pam})
+Weapon.create({weapon_kind: "sword", user: maria})
+Weapon.create({weapon_kind: "sword", user: mike})
+Weapon.create({weapon_kind: "staff", user: rick})
+Weapon.create({weapon_kind: "arrow", user: sasha})
+Weapon.create({weapon_kind: "staff", user: pam})

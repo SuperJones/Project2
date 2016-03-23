@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-    has_many :items
+    has_many :inventories
+    has_many :weapons, through: :inventories
 end

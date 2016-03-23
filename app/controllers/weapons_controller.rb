@@ -1,11 +1,11 @@
-class ItemsController < ApplicationController
+class WeaponsController < ApplicationController
 
   def index
-      @items = Item.all
+      @weapons = Weapon.all
   end
 
   def new
-      @item = Item.new
+      @weapon = Weapon.new
   end
 
   def show
