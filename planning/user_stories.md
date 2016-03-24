@@ -8,10 +8,10 @@
 
 
 #### Silver:
-- As a user, I should be able to sign in with a password, for added security.
-- All users should have a dual button on their profile page, so that other users can challenge them to a fight.
-- As a user, I should NOT be able to edit other peoples pages, for security purposes.
-- As a user, I should be able to upgrade my weapon, so that I can win more duals.
++ As a user, I should be able to sign in with a password, for added security.
++ As a user, I should NOT be able to edit other peoples pages, for security purposes.
+- All users should have a functional dual button on their profile page, so that other users can challenge them to a fight.
+- As a user, I should be able to trade in my steps for coins and use those coins to upgrade my weapon, so that I can win more duals.
 
 
 #### Gold:
