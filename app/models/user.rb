@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_many :inventories
+    has_many :inventories, dependent: :destroy
     has_many :weapons, through: :inventories
 
     after_create :generate_inventory

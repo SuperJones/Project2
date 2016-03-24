@@ -8,11 +8,10 @@
                 <h3><%= @user.username%></h3>
                 <p><%=link_to "Edit Profile", edit_user_path(@user) if @current_user == @user %></p>
                 <p>Steps: <%= @user.steps%></p>
-
+                    <!-- Dual button -->
                 <div>
                     <button type="button" class="btn btn-primary">Dual!</button>
                 </div>
-                <!-- TODO: There should be a dual button here. -->
 
                     <!-- Search bar -->
             <div class="input-group search">
@@ -40,7 +39,7 @@
 
                 </ul>
             <% end%>
-
+                <!-- Show weapon in Inventory -->
             <table class="table">
                 <% @user.weapons.each do |weapon|%>
                     <tr>
