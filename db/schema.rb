@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323134624) do
+ActiveRecord::Schema.define(version: 20160325181708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "inventories", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "weapon_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "inventories", ["user_id"], name: "index_inventories_on_user_id", using: :btree
-  add_index "inventories", ["weapon_id"], name: "index_inventories_on_weapon_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string  "username"
@@ -41,6 +31,4 @@ ActiveRecord::Schema.define(version: 20160323134624) do
     t.string  "weapon_name"
   end
 
-  add_foreign_key "inventories", "users"
-  add_foreign_key "inventories", "weapons"
 end
