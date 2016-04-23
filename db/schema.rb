@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325181708) do
+ActiveRecord::Schema.define(version: 20160422164454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "weapon_id"
+  end
+
+  add_index "inventories", ["user_id"], name: "index_inventories_on_user_id", using: :btree
+  add_index "inventories", ["weapon_id"], name: "index_inventories_on_weapon_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string  "username"
@@ -25,10 +33,10 @@ ActiveRecord::Schema.define(version: 20160325181708) do
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.string  "weapon_kind"
-    t.integer "hp"
-    t.string  "photo_url"
     t.string  "weapon_name"
+    t.string  "weapon_type"
+    t.string  "photo_url"
+    t.integer "attack_points"
   end
 
 end

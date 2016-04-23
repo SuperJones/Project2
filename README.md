@@ -1,4 +1,4 @@
-# Project 2
+rails
 First foray into building a full-stack application from the ground up.
 
 Objective: Build a game that motivates people to take more steps with steps tracker.
