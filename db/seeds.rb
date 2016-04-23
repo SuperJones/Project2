@@ -11,11 +11,11 @@ Weapon.destroy_all
 User.destroy_all
 
 
-basicsword = Weapon.create!({ weapon_kind: "sword", weapon_name: "Wooden Sword", hp: 10 })
-basicstaff = Weapon.create!({ weapon_kind: "staff", weapon_name: "Simple Wooden Staff", hp: 10 })
-basicarrow = Weapon.create!({ weapon_kind: "arrow", weapon_name: "Bow and No Tip Arrow", hp: 10 })
-leveltwosword = Weapon.create!({weapon_kind: "sword", weapon_name: "Metal Sword", hp: 50 })
-leveltwostaff = Weapon.create!({weapon_kind: "staff", weapon_name: "Staff with Magic Orb on Top", hp: 50 })
+basicsword = Weapon.create!({ weapon_type: "sword", weapon_name: "Wooden Sword", attack_points: 10 })
+basicstaff = Weapon.create!({ weapon_type: "staff", weapon_name: "Simple Wooden Staff", attack_points: 10 })
+basicarrow = Weapon.create!({ weapon_type: "arrow", weapon_name: "Bow and No Tip Arrow", attack_points: 10 })
+leveltwosword = Weapon.create!({weapon_type: "sword", weapon_name: "Metal Sword", attack_points: 50 })
+leveltwostaff = Weapon.create!({weapon_type: "staff", weapon_name: "Staff with Magic Orb on Top", attack_points: 50 })
 
 
 maria = User.create!({ username: "mgutierrez0",steps: 314, photo_url: "http://i.imgur.com/1Keegdm.jpg", email: "mariagutierrez@lollipants.com" })
@@ -25,18 +25,8 @@ sasha = User.create!({ username: "spalmer3",steps: 805, photo_url: "http://i.img
 pam = User.create!({ username: "pgarza4",steps: 259, photo_url: "http://i.imgur.com/Cl5LAuE.jpg", email: "pamgarza@simplepants.com" })
 
 
-i = maria.inventories.first
-i.weapon = basicsword
-i.save
-i = mike.inventories.first
-i.weapon = basicstaff
-i.save
-i = rick.inventories.first
-i.weapon = basicarrow
-i.save
-i = sasha.inventories.first
-i.weapon = leveltwosword
-i.save
-i = pam.inventories.first
-i.weapon = leveltwostaff
-i.save
+Inventory.create!({weapon_id: basicsword.id, user_id: maria.id});
+Inventory.create!({weapon_id: basicstaff.id, user_id: mike.id});
+Inventory.create!({weapon_id: basicarrow.id, user_id: rick.id});
+Inventory.create!({weapon_id: leveltwosword.id, user_id: sasha.id});
+Inventory.create!({weapon_id: leveltwostaff.id, user_id: pam.id});
