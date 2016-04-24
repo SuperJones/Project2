@@ -14,16 +14,7 @@
                 <h1 class='logo'><%= link_to "Steps Battle", root_url %></h1>
             </div>
 
-            <div class='col-sm-4 col-xs-5 text-center signupin'>
-                <% if @current_user %>
-                      <%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %>
-                      <%= link_to "Sign Out", session_path, method: :delete %>
-                    <% else %>
-                      <%= link_to "Sign Up", new_user_path %>
-                      <%= link_to "Sign In", new_session_path %>
-                <% end %>
-            </div>
-        </div>
+
     </div>
 
     <%= yield %>

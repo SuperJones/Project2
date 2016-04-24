@@ -28,7 +28,7 @@
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2 class="choose-weapon">Inventory</h2>
-            <% if !@user.inventories.first.weapon%>
+            <% if !@user.weapon%>
                 <!-- Choose weapon if new user -->
                 <h4>Please choose a weapon.</h4>
                 <p>Note: You will not be able to change this later, so choose wisely young warrior.</p>
