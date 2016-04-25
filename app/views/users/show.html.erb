@@ -38,29 +38,29 @@
                     <% end %>
 
                 </ul>
-            <% end%>
+            <% else%>
                 <!-- Show weapon in Inventory -->
             <table class="table">
-                <% @user.weapon do |weapon|%>
+
                     <tr>
                         <div >
-                        <td rowspan="4" class="pic-border" ><%= image_tag "#{weapon.weapon_kind}.png"%></td>
+                        <td rowspan="4" class="pic-border" ><%= image_tag "#{@user.weapon.weapon_type}.png"%></td>
                         </div>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon Type: </td>
-                        <td><%= weapon.weapon_kind.capitalize%></td>
+                        <td><%= @user.weapon.weapon_type.capitalize%></td>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon Name: </td>
-                        <td><%= weapon.weapon_name.capitalize%></td>
+                        <td><%= @user.weapon.weapon_name.capitalize%></td>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon HP:</td>
-                        <td> <%= weapon.hp%></td>
+                        <td> <%= @user.weapon.attack_points%></td>
                     </tr>
-                <% end%>
             </table>
+            <%end%>
         </div>
     </div>
 </div>
