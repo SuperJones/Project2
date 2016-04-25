@@ -41,7 +41,7 @@
             <% end%>
                 <!-- Show weapon in Inventory -->
             <table class="table">
-                <% @weapon.weapon_id do |weapon|%>
+                <% @user.weapon do |weapon|%>
                     <tr>
                         <div >
                         <td rowspan="4" class="pic-border" ><%= image_tag "#{weapon.weapon_kind}.png"%></td>
