@@ -5,6 +5,7 @@ class CreateWeapons < ActiveRecord::Migration
       t.string :weapon_type
       t.string :photo_url
       t.integer :attack_points
+      t.references :inventory, index: true, foreign_key: true
     end
   end
 end

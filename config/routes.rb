@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   resources :users do
     resources :weapons
   end
-  # resources :users do
-  #     member do
-  #         get "add_weapon"
-  #     end
-  # end
 
-  # put "/users/:id/add_weapon", to: "users#add_weapon"
-  #
+  resources :users do
+      member do
+          get "add_weapon"
+      end
+  end
+
+  put "/users/:id/add_weapon", to: "users#add_weapon"
+
   # resources :weapons
   # resource :session
 end

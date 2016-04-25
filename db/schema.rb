@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20160422164454) do
     t.string  "weapon_type"
     t.string  "photo_url"
     t.integer "attack_points"
+    t.integer "inventory_id"
   end
 
+  add_index "weapons", ["inventory_id"], name: "index_weapons_on_inventory_id", using: :btree
+
+  add_foreign_key "weapons", "inventories"
 end
