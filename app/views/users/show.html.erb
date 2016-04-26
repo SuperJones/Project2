@@ -34,7 +34,7 @@
                 <p>Note: You will not be able to change this later, so choose wisely young warrior.</p>
                 <ul>
                     <% @weapons.each do |weapon| %>
-                        <li><a href="/users/<%= @user.id%>/add_weapon?weapon_id=<%= @inventory.weapon_id %>"><%= weapon.weapon_name %></a></li>
+                        <li><%= weapon.weapon_name %></li>
                     <% end %>
 
                 </ul>

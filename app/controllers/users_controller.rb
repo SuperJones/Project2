@@ -40,10 +40,8 @@ class UsersController < ApplicationController
 
   def add_weapon
     @user = User.find(params[:id])
-    @weapon = Weapon.find(params[:weapon_id])
-    @inventory = Inventory.new
-    @inventory.update(user_id: @user, weapon_id: @weapon)
-    redirect_to @user
+    @weapon = Weapon.find(params[:id])
+    @inventory = Inventory.create!(user_id: @user.id, weapon_id: @weapon.id)
   end
 
   private
