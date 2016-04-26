@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def show
       @user = User.find(params[:id])
       @weapons = Weapon.limit(3)
+      @weapon = Weapon.find(current_user.inventory.weapon_id)
   end
 
   def edit
