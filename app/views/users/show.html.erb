@@ -10,7 +10,7 @@
                 <p>Steps: <%= @user.steps%></p>
                     <!-- Dual button -->
                 <div>
-                    <button type="button" class="btn btn-primary">Dual!</button>
+                    <button type="button" class="btn btn-primary">Duel!</button>
                 </div>
 
                     <!-- Search bar -->
@@ -27,36 +27,29 @@
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2 class="choose-weapon">Inventory</h2>
-            <% if !@user.weapon%>
-                <!-- Choose weapon if new user -->
-                <select name="inventory[weapon_id]">
-                  <% Weapon.limit(3).each do |weapon| %>
-                  <option value="<%= weapon.id %>"><%= weapon.weapon_name %></option>
-                  <% end %>
-                </select>
-            <% else%>
+
                 <!-- Show weapon in Inventory -->
             <table class="table">
 
                     <tr>
                         <div >
-                        <td rowspan="4" class="pic-border" ><%= image_tag "#{@user.weapon.weapon_type}.png"%></td>
+                        <td rowspan="4" class="pic-border" ><%= image_tag "#{@weapon.weapon_type}.png"%></td>
                         </div>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon Type: </td>
-                        <td><%= @user.weapon.weapon_type.capitalize%></td>
+                        <td><%= @weapon.weapon_type.capitalize%></td>
                     </tr>
                     <tr>
                         <td class="cell-topic">Weapon Name: </td>
-                        <td><%= @user.weapon.weapon_name.capitalize%></td>
+                        <td><%= @weapon.weapon_name.capitalize%></td>
                     </tr>
                     <tr>
-                        <td class="cell-topic">Weapon HP:</td>
-                        <td> <%= @user.weapon.attack_points%></td>
+                        <td class="cell-topic">Weapon Attack Points:</td>
+                        <td> <%= @weapon.attack_points%></td>
                     </tr>
             </table>
-            <%end%>
+
         </div>
     </div>
 </div>
