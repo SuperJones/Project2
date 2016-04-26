@@ -27,6 +27,9 @@
     <p><%= f.label :steps %><br />
     <%= f.text_field :steps %></p>
   </div>
+  <div class="field">
+    <%= collection_select(:inventory, :weapon_id, Weapon.limit(3), :id, :weapon_name, :prompt => 'Select a Weapon' )%>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

@@ -23,21 +23,17 @@
         </div>
 
 
-
-
+<!-- TODO: I would really like to figure out how to move the weapon choosing to the sign up page -->
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2 class="choose-weapon">Inventory</h2>
             <% if !@user.weapon%>
                 <!-- Choose weapon if new user -->
-                <h4>Please choose a weapon.</h4>
-                <p>Note: You will not be able to change this later, so choose wisely young warrior.</p>
-                <ul>
-                    <% @weapons.each do |weapon| %>
-                        <li><%= weapon.weapon_name %></li>
-                    <% end %>
-
-                </ul>
+                <select name="inventory[weapon_id]">
+                  <% Weapon.limit(3).each do |weapon| %>
+                  <option value="<%= weapon.id %>"><%= weapon.weapon_name %></option>
+                  <% end %>
+                </select>
             <% else%>
                 <!-- Show weapon in Inventory -->
             <table class="table">
