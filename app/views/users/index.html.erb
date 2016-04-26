@@ -29,16 +29,17 @@
                     <th>Username</th>
                     <th>Steps</th>
                 </tr>
+
                 <%count = 0%>
                 <% @users.sort_by{|u| u.steps}.reverse.each do |u| %>
-                    <% if count < 8%>
-                        <tr>
-                            <td><%= count += 1 %></td>
-                            <td><%= link_to u.username, user_path(u) %></td>
-                            <td><%= u.steps %></td>
-                        </tr>
-                    <% end %>
-                <% end %>
+                     <% if count <= 8 %>
+                         <tr>
+                             <td><%= count += 1 %></td>
+                             <td><%= link_to u.username, user_path(u) %></td>
+                             <td><%= u.steps %></td>
+                         </tr>
+                     <% end %>
+                 <% end %>
             </table>
 
         </div>
