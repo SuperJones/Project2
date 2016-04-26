@@ -24,9 +24,15 @@
   </div>
 
   <div class="field">
+    <p><%= f.label :photo_url, "Enter a full link to a photo of yourself:"%><br />
+    <%= f.text_field :photo_url %></p>
+  </div>
+
+  <div class="field">
     <p><%= f.label :steps %><br />
     <%= f.text_field :steps %></p>
   </div>
+
   <div class="field">
     <%= collection_select(:inventory, :weapon_id, Weapon.limit(3), :id, :weapon_name, :prompt => 'Select a Weapon' )%>
   </div>
