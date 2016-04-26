@@ -6,7 +6,7 @@
                     <!-- User Picture and info -->
                 <%= image_tag @user.photo_url, size: "200x200"%>
                 <h3><%= @user.username%></h3>
-                <p><%=link_to "Edit Profile", edit_user_path(@user) if @current_user == @user %></p>
+                <p><%=link_to "Edit Profile", edit_user_registration_path%></p>
                 <p>Steps: <%= @user.steps%></p>
                     <!-- Dual button -->
                 <div>
@@ -23,7 +23,6 @@
         </div>
 
 
-<!-- TODO: I would really like to figure out how to move the weapon choosing to the sign up page -->
                     <!-- Inventory -->
         <div class='col-sm-6 col-sm-offset-1 col-xs-5 chunk inventory'>
             <h2 class="choose-weapon">Inventory</h2>
