@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Eagle+Lake'%>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
   <div>
     <div class='row header-boarder'>
       <div class="col-sm-12 login">
@@ -15,8 +15,10 @@
           <% if current_user %>
             <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>  </li>
           <% else %>
-            <li>  <%= link_to 'Signup', new_user_registration_path %>  </li>
-            <li>  <%= link_to 'Login', new_user_session_path %>  </li>
+            <div class="signupLogin">
+              <li>  <%= link_to 'Signup', new_user_registration_path %>  </li>
+              <li>  <%= link_to 'Login', new_user_session_path %>  </li>
+            </div>
           <% end %>
         </ul>
       </div>
