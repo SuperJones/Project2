@@ -25,16 +25,28 @@ body {
     -webkit-border-bottom-left-radius: 8px;
     -moz-border-bottom-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    text-align: center;
+    .login{
+      li{
+        list-style: none;
 
+      }
+      a{
+        text-decoration: none;
+      }
+    }
 }
 
-.logo a{
+.logo {
+
+  a{
     text-decoration: none;
     font-size: 60px;
     font-family: 'Eagle Lake', cursive;
     color: $navfont;
     padding: 20px;
     text-shadow: 0px 2px 3px #8b6c62;
+  }
 }
 .signupin{
     margin-top: 20px;

@@ -10,16 +10,22 @@
 <body>
   <div>
     <div class='row header-boarder'>
-      <div class='col-sm-8 col-xs-7'>
+      <div class="col-sm-12 login">
+        <ul>
+          <% if current_user %>
+            <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>  </li>
+          <% else %>
+            <li>  <%= link_to 'Signup', new_user_registration_path %>  </li>
+            <li>  <%= link_to 'Login', new_user_session_path %>  </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class='col-sm-12'>
 
+
+<!-- TODO: style this so that title is centered and login is to the right -->
         <h1 class='logo'><%= link_to "Steps Battle", root_url %></h1>
-        <% if current_user %>
-        <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-        <% else %>
-        <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-        <h3><%= link_to 'Login', new_user_session_path %></h3>
-        <% end %>
-        
+
       </div>
 
 

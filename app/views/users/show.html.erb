@@ -10,9 +10,11 @@
                 <p>Steps: <%= @user.steps%></p>
                     <!-- Dual button -->
                 <div>
-                    <button type="button" class="btn btn-primary">Duel!</button>
+                    <%= link_to "Duel!", duel_path(:opponent => @user.id)%>
                 </div>
 
+
+<!-- TODO: make search bar actually search other users. -->
                     <!-- Search bar -->
             <div class="input-group search">
                 <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >

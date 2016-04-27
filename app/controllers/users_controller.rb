@@ -39,10 +39,9 @@ class UsersController < ApplicationController
       redirect_to users_path
   end
 
-  def add_weapon
-    @user = User.find(params[:id])
-    @weapon = Weapon.find(params[:id])
-    @inventory = Inventory.create!(user_id: @user.id, weapon_id: @weapon.id)
+  def duel
+    @current_user = current_user
+    @opponent = User.find(params[:opponent])
   end
 
   private
