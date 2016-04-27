@@ -29,8 +29,43 @@ function isAnimated(){
 function toggleActive(){
     oppweapon.toggleClass('active');
     currweapon.toggleClass('active');
-    isAnimated();
 }
+
+
+function decrementHp(){
+  // if opponent is active then decrement current_user hp
+  if(oppweapon.hasClass("active")){
+    var currhp = parseInt($("#currhp").html());
+    var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
+    var totalOppAtt = oppWeaponAtt;
+    alert("The current users hp equals " + currhp);
+    currhp -= totalOppAtt;
+    $("#currhp").html(currhp);
+    toggleActive();
+    isAnimated();
+    //update status in the middle
+    $('#middleInfo p:last').after("<p></p>");
+    $('#middleInfo p:last').append(currUsername + " loses " + totalOppAtt +" points");
+    toggleActive();
+
+  // else current_user is active so decrement opponents hp
+  }else{
+    var opphp = parseInt($("#opphp").html());
+    var currWeaponAtt = parseInt($("#currWeaponAtt").html());
+    var totatCurrAtt = currWeaponAtt;
+    alert("The current users hp equals " + opphp);
+    opphp -= totalCurrAtt;
+    $("#opphp").html(opphp);
+    toggleActive();
+    isAnimated();
+    //update status in the middle
+    $('#middleInfo p:last').after("<p></p>");
+    $('#middleInfo p:last').append(oppUsername + " loses "+totalCurrAtt + " points");
+    toggleActive();
+
+  }
+}
+
 
 // Initiat opponent with active and Add animation to active user
 oppweapon.addClass('active');
@@ -43,30 +78,6 @@ $('#middleInfo .fightStatus').html(oppUsername + " goes first");
 $('#middleInfo p:last').after("<p></p>");
 $('#middleInfo p:last').append(oppUsername + " ATTACKS " + currUsername);
 
-// TODO: update current_user HP and say how many points they lost
-$('#middleInfo p:last').after("<p></p>");
-$('#middleInfo p:last').append(currUsername + " loses points");
-
-
-function decrementHp(){
-  if(oppweapon.hasClass("active")){
-    var currhp = parseInt($("#currhp").html());
-    var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
-    var totalAtt = oppWeaponAtt;
-    alert("The current users hp equals " + currhp);
-
-// FIXME: define that 10 is the opponents attack_points
-    currhp -= totalAtt;
-    $("#currhp").html(currhp);
-    toggleActive();
-  }else{
-    var opphp = parseInt($("#opphp").html());
-    alert("The current users hp equals " + opphp);
-    opphp -= 10;
-    $("#currhp").html(opphp);
-    toggleActive();
-  }
-}
-
 decrementHp();
+
 });
