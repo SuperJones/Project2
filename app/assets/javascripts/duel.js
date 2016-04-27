@@ -47,11 +47,16 @@ $('#middleInfo p:last').append(oppUsername + " ATTACKS " + currUsername);
 $('#middleInfo p:last').after("<p></p>");
 $('#middleInfo p:last').append(currUsername + " loses points");
 
-function decrementCurrHp(){
+
+function decrementHp(){
   if(oppweapon.hasClass("active")){
     var currhp = parseInt($("#currhp").html());
+    var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
+    var totalAtt = oppWeaponAtt;
     alert("The current users hp equals " + currhp);
-    currhp -= 10;
+
+// FIXME: define that 10 is the opponents attack_points
+    currhp -= totalAtt;
     $("#currhp").html(currhp);
     toggleActive();
   }else{
@@ -63,5 +68,5 @@ function decrementCurrHp(){
   }
 }
 
-
+decrementHp();
 });

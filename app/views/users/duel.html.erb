@@ -13,7 +13,11 @@
       HP: <span id="currhp"><%= @current_user.health_points%></span>
     </p>
     <h5>ATTACK</h5>
-    <p>Weapon Attack: <%= @currweapon.attack_points%> </p>
+    <p>Weapon Attack:
+      <span id="currWeaponAtt">
+        <%= @currweapon.attack_points%>
+      </span>
+    </p>
     <h5>DEFENSE</h5>
   </div>
 
@@ -35,7 +39,11 @@
       HP: <span id="currhp"><%= @opponent.health_points%></span>
     </p>
     <h5>ATTACK</h5>
-    <p>Weapon Attack: <%= @oppweapon.attack_points%> </p>
+    <p>Weapon Attack:
+      <span id="oppWeaponAtt">
+        <%= @oppweapon.attack_points%>
+      </span>
+    </p>
     <h5>DEFENSE</h5>
   </div>
 </div>
