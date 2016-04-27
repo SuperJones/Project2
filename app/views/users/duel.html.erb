@@ -31,7 +31,9 @@
   <div class="col-md-3 col-md-offset-1 opponentUser">
     <%= image_tag @opponent.photo_url%>
     <p id="oppUsername"><%= @opponent.username %></p>
-    <p>Hp: <%= @opponent.health_points%></p>
+    <p>
+      HP: <span id="currhp"><%= @opponent.health_points%></span>
+    </p>
     <h5>ATTACK</h5>
     <p>Weapon Attack: <%= @oppweapon.attack_points%> </p>
     <h5>DEFENSE</h5>

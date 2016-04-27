@@ -8,11 +8,7 @@ var currUsername = $("#currUsername").html();
 var oppweapon = $('#oppweapon');
 var currweapon = $('#currweapon');
 
-//Add Active class
-function toggleActive(){
-    oppweapon.toggleClass('active');
-    currweapon.toggleClass('active');
-}
+
 
 //Add Animation for active
 function isAnimated(){
@@ -27,6 +23,13 @@ function isAnimated(){
   }else{
     currweapon.removeClass('animated infinite pulse');
   }
+}
+
+//Add Active class
+function toggleActive(){
+    oppweapon.toggleClass('active');
+    currweapon.toggleClass('active');
+    isAnimated();
 }
 
 // Initiat opponent with active and Add animation to active user
@@ -44,11 +47,21 @@ $('#middleInfo p:last').append(oppUsername + " ATTACKS " + currUsername);
 $('#middleInfo p:last').after("<p></p>");
 $('#middleInfo p:last').append(currUsername + " loses points");
 
-function decrement(){
-  var currhp = $("#currhp").html();
-  alert("The current users hp equals " + currhp);
+function decrementCurrHp(){
+  if(oppweapon.hasClass("active")){
+    var currhp = parseInt($("#currhp").html());
+    alert("The current users hp equals " + currhp);
+    currhp -= 10;
+    $("#currhp").html(currhp);
+    toggleActive();
+  }else{
+    var opphp = parseInt($("#opphp").html());
+    alert("The current users hp equals " + opphp);
+    opphp -= 10;
+    $("#currhp").html(opphp);
+    toggleActive();
+  }
 }
 
-decrement();
 
 });
