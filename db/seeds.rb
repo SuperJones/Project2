@@ -11,9 +11,9 @@ Weapon.destroy_all
 User.destroy_all
 
 
-basicsword = Weapon.create!({ weapon_type: "sword", weapon_name: "Wooden Sword", attack_points: 10 })
-basicstaff = Weapon.create!({ weapon_type: "staff", weapon_name: "Simple Wooden Staff", attack_points: 10 })
-basicarrow = Weapon.create!({ weapon_type: "arrow", weapon_name: "Bow and No Tip Arrow", attack_points: 10 })
+basicsword = Weapon.create!({ weapon_type: "sword", weapon_name: "Wooden Sword", photo_url: "http://i.imgur.com/abUeoze.png", attack_points: 10 })
+basicstaff = Weapon.create!({ weapon_type: "staff", weapon_name: "Simple Wooden Staff", photo_url: "http://i.imgur.com/H0hXach.png", attack_points: 10 })
+basicarrow = Weapon.create!({ weapon_type: "arrow", weapon_name: "Bow and No Tip Arrow", photo_url: "http://i.imgur.com/uR90T10.png", attack_points: 10 })
 leveltwosword = Weapon.create!({weapon_type: "sword", weapon_name: "Metal Sword", attack_points: 50 })
 leveltwostaff = Weapon.create!({weapon_type: "staff", weapon_name: "Staff with Magic Orb on Top", attack_points: 50 })
 
