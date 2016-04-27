@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def show
       @user = User.find(params[:id])
       @weapons = Weapon.limit(3)
-      @weapon = Weapon.find(current_user.inventory.weapon_id)
+      @weapon = Weapon.find(@user.inventory.weapon_id)
   end
 
   def edit
@@ -41,7 +41,9 @@ class UsersController < ApplicationController
 
   def duel
     @current_user = current_user
+    @currweapon = Weapon.find(@current_user.inventory.weapon_id)
     @opponent = User.find(params[:opponent])
+    @oppweapon = Weapon.find(@opponent.inventory.weapon_id)
   end
 
   private
