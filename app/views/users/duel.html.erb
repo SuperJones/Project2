@@ -8,7 +8,7 @@
   <!-- TODO: track wins -->
   <div class="col-md-3 currentUser">
     <%= image_tag @current_user.photo_url%>
-    <p><%= @current_user.username %></p>
+    <p id="currUsername"><%= @current_user.username %></p>
     <p>HP: <%= @current_user.health_points%></p>
     <h5>ATTACK</h5>
     <p>Weapon Attack: <%= @currweapon.attack_points%> </p>
@@ -17,17 +17,18 @@
 
   <div class="col-md-4 col-md-offset-1 middleInfo">
     <h4>Details of Fight</h4>
-    <div>
+    <p class="fightStatus"></p>
+    <div id="currweapon">
       <%= image_tag @currweapon.photo_url%>
     </div>
-    <div>
+    <div id="oppweapon">
       <%= image_tag @oppweapon.photo_url%>
     </div>
   </div>
 
   <div class="col-md-3 col-md-offset-1 opponentUser">
     <%= image_tag @opponent.photo_url%>
-    <p><%= @opponent.username %></p>
+    <p id="oppUsername"><%= @opponent.username %></p>
     <p>Hp: <%= @opponent.health_points%></p>
     <h5>ATTACK</h5>
     <p>Weapon Attack: <%= @oppweapon.attack_points%> </p>
