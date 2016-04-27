@@ -11,17 +11,26 @@ var currweapon = $('#currweapon');
 
 
 //Add Animation for active
-function isAnimated(){
-  if(oppweapon.hasClass("active")){
-    oppweapon.addClass('animated infinite pulse');
-  }else{
-    oppweapon.removeClass('animated infinite pulse');
-  }
+// function isAnimated(){
+//   if(oppweapon.hasClass("active")){
+//     oppweapon.addClass('animated infinite pulse');
+//   }else{
+//     oppweapon.removeClass('animated infinite pulse');
+//   }
+//
+//   if(currweapon.hasClass("active")){
+//     currweapon.addClass('animated infinite pulse');
+//   }else{
+//     currweapon.removeClass('animated infinite pulse');
+//   }
+// }
 
-  if(currweapon.hasClass("active")){
-    currweapon.addClass('animated infinite pulse');
+function isAnimated(weapon){
+  var classname = 'animated infinite pulse';
+  if(weapon.hasClass("active")){
+    weapon.addClass(classname);
   }else{
-    currweapon.removeClass('animated infinite pulse');
+    weapon.removeClass(classname);
   }
 }
 
@@ -42,7 +51,8 @@ function decrementHp(){
     currhp -= totalOppAtt;
     $("#currhp").html(currhp);
     toggleActive();
-    isAnimated();
+    isAnimated(oppweapon);
+    isAnimated(currweapon);
     //update status in the middle
     $('#middleInfo p:last').after("<p></p>");
     $('#middleInfo p:last').append(currUsername + " loses " + totalOppAtt +" points");
@@ -57,10 +67,11 @@ function decrementHp(){
     opphp -= totalCurrAtt;
     $("#opphp").html(opphp);
     toggleActive();
-    isAnimated();
+    isAnimated(currweapon);
+    isAnimated(oppweapon);
     //update status in the middle
     $('#middleInfo p:last').after("<p></p>");
-    $('#middleInfo p:last').append(oppUsername + " loses "+totalCurrAtt + " points");
+    $('#middleInfo p:last').append(oppUsername + " loses "+totalCurrAtt + " health points");
     toggleActive();
 
   }
@@ -69,7 +80,7 @@ function decrementHp(){
 
 // Initiat opponent with active and Add animation to active user
 oppweapon.addClass('active');
-isAnimated();
+isAnimated(oppweapon);
 
 // say who is the first to attack
 $('#middleInfo .fightStatus').html(oppUsername + " goes first");
