@@ -9,13 +9,15 @@
   <div class="col-md-3 currentUser">
     <%= image_tag @current_user.photo_url%>
     <p id="currUsername"><%= @current_user.username %></p>
-    <p>HP: <%= @current_user.health_points%></p>
+    <p>
+      HP: <span id="currhp"><%= @current_user.health_points%></span>
+    </p>
     <h5>ATTACK</h5>
     <p>Weapon Attack: <%= @currweapon.attack_points%> </p>
     <h5>DEFENSE</h5>
   </div>
 
-  <div class="col-md-4 col-md-offset-1 middleInfo">
+  <div id="middleInfo" class="col-md-4 col-md-offset-1">
     <h4>Details of Fight</h4>
     <p class="fightStatus"></p>
     <div id="currweapon">
