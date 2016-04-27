@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*Colors*/
+          /*------COLOR variable------*/
 
 $navfont: #6C8F79;
 $basefont: #532E26;
@@ -10,8 +10,11 @@ $navbackgrd: #2B211E;
 $mainbuttons: #665247;
 $listoptions:  #ad8363;
 
-/* universal */
+          /* ------UNIVERSAL------ */
 
+*{
+  outline: 1px solid red;
+}
 body {
   padding-top: auto;
   background-color: #D3BA9F;
@@ -19,7 +22,6 @@ body {
 }
 
 .header-boarder{
-    background-color: $navbackgrd;
     padding: 0 auto;
     margin-left: 5px;
     -webkit-border-bottom-left-radius: 8px;
@@ -38,7 +40,7 @@ body {
 }
 
 .logo {
-
+  margin-bottom: 40px;
   a{
     text-decoration: none;
     font-size: 60px;
@@ -48,9 +50,12 @@ body {
     text-shadow: 0px 2px 3px #8b6c62;
   }
 }
-.signupin{
+.login{
     margin-top: 20px;
     text-decoration: none;
+    text-align: right;
+    padding-right: 30px;
+    font-size: 18px;
     a{
         color: $navfont;
     }
@@ -81,15 +86,9 @@ body {
     }
 }
 
-.profile{
-    padding-top: 20px;
-    text-align: center;
-}
-
 .search{
     margin-top: 20px;
 }
-
 
 .chunk{
     background-color: $bodychunks;
@@ -132,9 +131,6 @@ body {
     }
 }
 
-.inventory{
-    margin: 5px 20px;
-}
 
 .cell-topic{
     width: 20%;
@@ -143,4 +139,57 @@ body {
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: $navfont !important;
     border-color: $navfont !important;
+}
+
+
+
+          /*------USER SHOW Page------*/
+.profile{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.inventory{
+    margin: 5px 20px;
+}
+
+          /* -------DUEL Page-------- */
+
+.duelTitle{
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.battle{
+  img{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .currentUser{
+    h5{
+      font-weight: bold;
+    }
+    h5, p{
+      text-align: center;
+    }
+  }
+
+  .middleInfo{
+    h4{
+      text-align: center;
+    }
+  }
+
+  .opponentUser{
+    h5{
+      font-weight: bold;
+    }
+    h5, p{
+      text-align: center;
+    }
+  }
 }
