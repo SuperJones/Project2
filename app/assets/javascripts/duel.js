@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 // Get usernames
-var oppUsername = $("#oppUsername").html();
-var currUsername = $("#currUsername").html();
+// var oppUsername = $("#oppUsername").html();
+// var currUsername = $("#currUsername").html();
 
 //get weapon
 var oppweapon = $('#oppweapon');
@@ -29,16 +29,16 @@ function toggleActive(){
 }
 
 //Test if someones hp is equal to 0
-function whoWinner(opponentHP, currentUserHP){
-  if (opponentHP === 0 || currentUserHP === 0){
-    $('#middleInfo p:last').after("<p class='winner'></p>");
-  }
-  if(opponentHP === 0){
-    $('#middleInfo p:last').append(oppUsername + " WINS!!");
-  }else{
-    $('#middleInfo p:last').append(currUsername + " WINS!!");
-  }
-}
+// function whoWinner(opponentHP, currentUserHP){
+//   if (opponentHP === 0 || currentUserHP === 0){
+//     $('#middleInfo p:last').after("<p class='winner'></p>");
+//   }
+//   if(opponentHP === 0){
+//     $('#middleInfo p:last').append(oppUsername + " WINS!!");
+//   }else{
+//     $('#middleInfo p:last').append(currUsername + " WINS!!");
+//   }
+// }
 
 function statusUpdate(username1, username2, user1Att){
   //opponent attacks current_user
@@ -50,6 +50,8 @@ function statusUpdate(username1, username2, user1Att){
 }
 
 function decrementHp(){
+  var oppUsername = $("#oppUsername").html();
+  var currUsername = $("#currUsername").html();
   // if opponent is active then decrement current_user hp
   if(oppweapon.hasClass("active")){
     var currhp = parseInt($("#currhp").html());
@@ -61,7 +63,6 @@ function decrementHp(){
     toggleActive();
     isAnimated(oppweapon);
     isAnimated(currweapon);
-
   // else current_user is active so decrement opponents hp
   }else{
     var opphp = parseInt($("#opphp").html());
@@ -73,28 +74,19 @@ function decrementHp(){
     toggleActive();
     isAnimated(currweapon);
     isAnimated(oppweapon);
-
   }
 }
 
 function startBattle(opponentHP, currentUserHP){
-
-  do{
-    console.log("1. Opponent hp is " + opponentHP + " and Current hp is " + currentUserHP);
-    timerId = setTimeout(decrementHp, 3000);
-    clearInterval(timerId);
-    console.log("2. Opponent hp is " + opponentHP + " and Current hp is " + currentUserHP);
-  }while (opponentHP > 0 && currentUserHP > 0);
-  //else{
-  //   if(opponentHP <= 0){
-  //     opponentHP = 0;
-  //     clearInterval(timerId);
-  //   }
-  //   if(currentUserHP <= 0){
-  //     currentUserHP = 0;
-  //     clearInterval(timerId);
-  //   }
-  // }
+    timerId = setInterval(decrementHp, 3000);
+    if(opponentHP <= 0){
+      opponentHP = 0;
+      clearInterval(timerId);
+    }
+    if(currentUserHP <= 0){
+      currentUserHP = 0;
+      clearInterval(timerId);
+    }
 }
 
 
@@ -104,7 +96,8 @@ oppweapon.addClass('active');
 isAnimated(oppweapon);
 
 // say who is the first to attack
-$('#middleInfo .fightStatus').html(oppUsername + " goes first");
+var firstUser = $("#oppUsername").html();
+$('#middleInfo .fightStatus').html(firstUser + " goes first");
 
 
 startBattle(opphp, currhp);
