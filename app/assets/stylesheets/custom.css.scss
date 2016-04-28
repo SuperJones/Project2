@@ -1,35 +1,45 @@
-//TODO: make site look nicer
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
           /*============COLOR variable============*/
 
-$navfont: #6C8F79;
-$basefont: #532E26;
-$bodychunks: #C4936D;
-$navbackgrd: #2B211E;
+$basefont: #fff;
+$backgrd: #000;
+$accentColor: #0099ff;
 $mainbuttons: #665247;
-$listoptions:  #ad8363;
 
           /* ============UNIVERSAL============ */
 
-*{
-  outline: 1px solid red;
-}
+// *{
+//   outline: 1px solid red;
+// }
 body {
   padding-top: auto;
-  background-color: #D3BA9F;
   color: $basefont;
-  
+  background: rgb(53, 54, 54); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgb(53, 54, 54), $backgrd); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(53, 54, 54), $backgrd); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(53, 54, 54), $backgrd); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(53, 54, 54), $backgrd); /* Standard syntax */
 }
 
 .header-boarder{
+    background-color: $backgrd;
+    height: 150px;
     padding: 0 auto;
-    margin-left: 5px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-bottom-left-radius: 8px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+      -webkit-border-bottom-left-radius: 8px;
+      -moz-border-bottom-left-radius: 8px;
     border-bottom-left-radius: 8px;
+      -webkit-border-bottom-right-radius: 8px;
+      -moz-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+      -webkit-box-shadow: 0px 0px 5px  $accentColor;
+      -moz-box-shadow: 0px 0px 5px  $accentColor;
+    box-shadow: 0px 0px 5px  $accentColor;
     text-align: center;
     .login{
       li{
@@ -43,12 +53,12 @@ body {
 }
 
 .logo {
-  margin-bottom: 40px;
+  margin: 0px;
   a{
     text-decoration: none;
     font-size: 60px;
     font-family: 'Eagle Lake', cursive;
-    color: $navfont;
+    color: $basefont;
     padding: 20px;
     text-shadow: 0px 2px 3px #8b6c62;
   }
@@ -60,22 +70,31 @@ body {
     padding-right: 30px;
     font-size: 18px;
     a{
-        color: $navfont;
+        color: $basefont;
     }
 }
 
 .sidebar{
-    color: $navfont;
-    background-color: $navbackgrd;
-    height: 800px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
+    color: $basefont;
+    background-color: $backgrd;
+    height: 500px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
     border-radius: 8px;
     margin-top: 5px;
-    margin-left: 5px;
-    -webkit-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
-    box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+    margin-left: 15px;
+      -webkit-box-shadow: 0px 0px 5px  $accentColor;
+      -moz-box-shadow: 0px 0px 5px  $accentColor;
+    box-shadow: 0px 0px 5px  $accentColor;
+    .input-group{
+      -webkit-box-shadow: 0px 0px 10px  $accentColor;
+      -moz-box-shadow: 0px 0px 10px  $accentColor;
+    box-shadow: 0px 0px 10px  $accentColor;
+    }
+    .input-group-addon {
+      background: $accentColor;
+      color: white;
+    }
 }
 
 .instructions{
@@ -94,13 +113,13 @@ body {
 }
 
 .chunk{
-    background-color: $bodychunks;
+    background-color: $backgrd;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0px 0px 15px $accentColor;
+      -webkit-box-shadow: 0px 0px 15px $accentColor;
+    box-shadow: 0px 0px 15px $accentColor;
 
     h2,h4,p,ul{
         text-align: center;
@@ -111,10 +130,9 @@ body {
         padding: 0;
     }
     ul li{
-        background-color: $listoptions;
         margin: 3px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
         border-radius: 5px;
     }
     a{
@@ -132,6 +150,9 @@ body {
     table{
         align-content: center;
     }
+    a{
+      color: $accentColor;
+    }
 }
 
 
@@ -140,8 +161,8 @@ body {
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: $navfont !important;
-    border-color: $navfont !important;
+    background-color: $basefont !important;
+    border-color: $basefont !important;
 }
 
 
@@ -183,7 +204,7 @@ body {
 
   #middleInfo{
     img{
-      background-color: #fff;
+      background-color: $basefont;
     }
     h4{
       text-align: center;
@@ -199,8 +220,8 @@ body {
     }
   }
   .active img{
-    -moz-box-shadow: 0px 0px 15px #0099ff;
-        -webkit-box-shadow: 0px 0px 15px #0099ff;
-        box-shadow: 0px 0px 15px #0099ff;
+      -moz-box-shadow: 0px 0px 15px $accentColor;
+      -webkit-box-shadow: 0px 0px 15px $accentColor;
+    box-shadow: 0px 0px 15px $accentColor;
   }
 }
