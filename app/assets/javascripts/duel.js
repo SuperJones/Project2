@@ -40,9 +40,14 @@ function statusUpdate(username1, username2, user1Att){
   //opponent attacks current_user
   $('#middleInfo p:first').before("<p></p>");
   $('#middleInfo p:first').append(username1 + " ATTACKS " + username2);
-  //update status in the middle
+  //update status of hp
   $('#middleInfo p:first').before("<p></p>");
-  $('#middleInfo p:first').append(username2 + " loses "+ user1Att + " health points");
+  $('#middleInfo p:first').append(username2 + " suffers " + user1Att + " damage");
+}
+
+function ranNum(){
+  time = Math.floor(Math.random() * 10) + 1;
+  return time;
 }
 
 function decrementHp(){
@@ -56,12 +61,13 @@ function decrementHp(){
     var currhp = parseInt($("#currhp").html());
     var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
     var totalOppAtt = oppWeaponAtt;
+    var damagetoCurr = (ranNum() * totalOppAtt);
 
     //print out updates
-    statusUpdate(oppUsername, currUsername, totalOppAtt);
+    statusUpdate(oppUsername, currUsername, damagetoCurr);
 
     //decrement userhp and show on screen
-    currhp -= totalOppAtt;
+    currhp -= damagetoCurr;
     $("#currhp").html(currhp);
 
     //See if user hp is 0 and if so, proclaim user the winner
@@ -82,8 +88,11 @@ function decrementHp(){
     var opphp = parseInt($("#opphp").html());
     var currWeaponAtt = parseInt($("#currWeaponAtt").html());
     var totalCurrAtt = currWeaponAtt;
-    statusUpdate(currUsername, oppUsername, totalCurrAtt);
-    opphp -= totalCurrAtt;
+    var damagetoOpp = (ranNum() * totalCurrAtt);
+
+    statusUpdate(currUsername, oppUsername, damagetoOpp);
+
+    opphp -= damagetoOpp;
     $("#opphp").html(opphp);
 
     if(opphp <= 0){
