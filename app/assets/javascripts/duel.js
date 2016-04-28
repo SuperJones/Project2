@@ -31,18 +31,18 @@ function toggleActive(){
 // Test if someones hp is equal to 0
 function whoWinner(userhp, username){
   if (userhp === 0){
-    $('#middleInfo p:last').after("<p class='winner'></p>");
-    $('#middleInfo p:last').append(username + " WINS!!");
+    $('#middleInfo p:first').before("<p class='winner'></p>");
+    $('#middleInfo p:first').append(username + " WINS!!");
   }
 }
 
 function statusUpdate(username1, username2, user1Att){
   //opponent attacks current_user
-  $('#middleInfo p:last').after("<p></p>");
-  $('#middleInfo p:last').append(username1 + " ATTACKS " + username2);
+  $('#middleInfo p:first').before("<p></p>");
+  $('#middleInfo p:first').append(username1 + " ATTACKS " + username2);
   //update status in the middle
-  $('#middleInfo p:last').after("<p></p>");
-  $('#middleInfo p:last').append(username2 + " loses "+ user1Att + " health points");
+  $('#middleInfo p:first').before("<p></p>");
+  $('#middleInfo p:first').append(username2 + " loses "+ user1Att + " health points");
 }
 
 function decrementHp(){
