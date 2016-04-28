@@ -78,20 +78,23 @@ function decrementHp(){
 }
 
 function startBattle(opponentHP, currentUserHP){
-  if(opponentHP > 0 || currentUserHP > 0){
-    console.log("Opponent is " + opponentHP + " and Current is " + currentUserHP);
-    timerId = setTimeout(decrementHp, 3000);
 
-  }else{
-    if(opponentHP <= 0){
-      opponentHP = 0;
-      clearInterval(timerId);
-    }
-    if(currentUserHP <= 0){
-      currentUserHP = 0;
-      clearInterval(timerId);
-    }
-  }
+  do{
+    console.log("1. Opponent hp is " + opponentHP + " and Current hp is " + currentUserHP);
+    timerId = setTimeout(decrementHp, 3000);
+    clearInterval(timerId);
+    console.log("2. Opponent hp is " + opponentHP + " and Current hp is " + currentUserHP);
+  }while (opponentHP > 0 && currentUserHP > 0);
+  //else{
+  //   if(opponentHP <= 0){
+  //     opponentHP = 0;
+  //     clearInterval(timerId);
+  //   }
+  //   if(currentUserHP <= 0){
+  //     currentUserHP = 0;
+  //     clearInterval(timerId);
+  //   }
+  // }
 }
 
 
