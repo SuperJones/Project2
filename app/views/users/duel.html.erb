@@ -21,18 +21,20 @@
     <h5>DEFENSE</h5>
   </div>
 
-  <div id="middleInfo" class="col-md-4 col-md-offset-1">
-    <h4>Details of Fight</h4>
-    <p class="fightStatus"></p>
-    <div id="currweapon">
+  <div id="middleInfo" class="col-md-6">
+    <div id="currweapon" class="col-md-3">
       <%= image_tag @currweapon.photo_url%>
     </div>
-    <div id="oppweapon">
+    <div class="col-md-6">
+      <h4>Details of Fight</h4>
+      <p class="fightStatus"></p>
+    </div>
+    <div id="oppweapon" class="col-md-3">
       <%= image_tag @oppweapon.photo_url%>
     </div>
   </div>
 
-  <div class="col-md-3 col-md-offset-1 opponentUser">
+  <div class="col-md-3 opponentUser">
     <%= image_tag @opponent.photo_url%>
     <p id="oppUsername"><%= @opponent.username %></p>
     <p>

@@ -1,7 +1,9 @@
+//TODO: make site look nicer
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-          /*------COLOR variable------*/
+          /*============COLOR variable============*/
 
 $navfont: #6C8F79;
 $basefont: #532E26;
@@ -10,7 +12,7 @@ $navbackgrd: #2B211E;
 $mainbuttons: #665247;
 $listoptions:  #ad8363;
 
-          /* ------UNIVERSAL------ */
+          /* ============UNIVERSAL============ */
 
 *{
   outline: 1px solid red;
@@ -19,6 +21,7 @@ body {
   padding-top: auto;
   background-color: #D3BA9F;
   color: $basefont;
+  
 }
 
 .header-boarder{
@@ -143,7 +146,7 @@ body {
 
 
 
-          /*------USER SHOW Page------*/
+          /*============USER SHOW Page============*/
 .profile{
     padding-top: 20px;
     text-align: center;
@@ -153,7 +156,7 @@ body {
     margin: 5px 20px;
 }
 
-          /* -------DUEL Page-------- */
+          /* ============ DUEL Page ============  */
 
 .duelTitle{
   text-align: center;
@@ -162,14 +165,14 @@ body {
 
 .battle{
   img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .currentUser{
+  #currentUser{
     h5{
       font-weight: bold;
     }
@@ -178,18 +181,26 @@ body {
     }
   }
 
-  .middleInfo{
+  #middleInfo{
+    img{
+      background-color: #fff;
+    }
     h4{
       text-align: center;
     }
   }
 
-  .opponentUser{
+  #opponentUser{
     h5{
       font-weight: bold;
     }
     h5, p{
       text-align: center;
     }
+  }
+  .active img{
+    -moz-box-shadow: 0px 0px 15px #0099ff;
+        -webkit-box-shadow: 0px 0px 15px #0099ff;
+        box-shadow: 0px 0px 15px #0099ff;
   }
 }
