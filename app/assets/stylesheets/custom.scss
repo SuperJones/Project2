@@ -7,13 +7,14 @@
 $basefont: #fff;
 $backgrd: #000;
 $accentColor: #0099ff;
-$mainbuttons: #665247;
+$oppGlow: rgb(255, 131, 0);
+$currGlow: rgb(83, 250, 15);
 
           /* ============UNIVERSAL============ */
 
-// *{
-//   outline: 1px solid red;
-// }
+*{
+  outline: 1px solid red;
+}
 body {
   padding-top: auto;
   color: $basefont;
@@ -193,35 +194,42 @@ body {
     margin-right: auto;
   }
 
-  #currentUser{
-    h5{
-      font-weight: bold;
-    }
-    h5, p{
-      text-align: center;
-    }
+#currentUser{
+  h5{
+    font-weight: bold;
   }
+  h5, p{
+    text-align: center;
+  }
+}
 
-  #middleInfo{
-    img{
-      background-color: $basefont;
-    }
-    h4{
-      text-align: center;
-    }
+#middleInfo{
+  img{
+    background-color: $basefont;
   }
+  h4{
+    text-align: center;
+  }
+}
 
-  #opponentUser{
-    h5{
-      font-weight: bold;
-    }
-    h5, p{
-      text-align: center;
-    }
+#opponentUser{
+  h5{
+    font-weight: bold;
   }
-  .active img{
-      -moz-box-shadow: 0px 0px 15px $accentColor;
-      -webkit-box-shadow: 0px 0px 15px $accentColor;
-    box-shadow: 0px 0px 15px $accentColor;
+  h5, p{
+    text-align: center;
   }
+}
+
+
+#oppweapon .active img{
+    -moz-box-shadow: 0px 0px 15px rgb(255, 131, 0);
+    -webkit-box-shadow: 0px 0px 15px rgb(255, 131, 0);
+  box-shadow: 0px 0px 15px rgb(255, 131, 0);
+}
+
+#currweapon .active img{
+    -moz-box-shadow: 0px 0px 15px rgb(83, 250, 15);
+    -webkit-box-shadow: 0px 0px 15px rgb(83, 250, 15);
+  box-shadow: 0px 0px 15px rgb(83, 250, 15);
 }
