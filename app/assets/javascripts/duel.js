@@ -29,16 +29,12 @@ function toggleActive(){
 }
 
 // Test if someones hp is equal to 0
-// function whoWinner(opponentHP, currentUserHP){
-//   if (opponentHP === 0 || currentUserHP === 0){
-//     $('#middleInfo p:last').after("<p class='winner'></p>");
-//   }
-//   if(opponentHP === 0){
-//     $('#middleInfo p:last').append(oppUsername + " WINS!!");
-//   }else{
-//     $('#middleInfo p:last').append(currUsername + " WINS!!");
-//   }
-// }
+function whoWinner(userhp, username){
+  if (userhp === 0){
+    $('#middleInfo p:last').after("<p class='winner'></p>");
+    $('#middleInfo p:last').append(username + " WINS!!");
+  }
+}
 
 function statusUpdate(username1, username2, user1Att){
   //opponent attacks current_user
@@ -55,18 +51,31 @@ function decrementHp(){
 
   // if opponent is active then decrement current_user hp
   if(oppweapon.hasClass("active")){
+
+    //declare scope variables.
     var currhp = parseInt($("#currhp").html());
     var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
     var totalOppAtt = oppWeaponAtt;
 
+    //print out updates
     statusUpdate(oppUsername, currUsername, totalOppAtt);
 
+    //decrement userhp and show on screen
     currhp -= totalOppAtt;
     $("#currhp").html(currhp);
 
-    toggleActive();
-    isAnimated(oppweapon);
-    isAnimated(currweapon);
+    //See if user hp is 0 and if so, proclaim user the winner
+    if(currhp <= 0){
+      clearInterval(timerId);
+      currhp = 0;
+      $("#currhp").html(currhp);
+      whoWinner(currhp, currUsername);
+    //else switch to the other user.
+    }else{
+      toggleActive();
+      isAnimated(oppweapon);
+      isAnimated(currweapon);
+    }
 
   // else current_user is active so decrement opponents hp
   }else{
@@ -76,22 +85,22 @@ function decrementHp(){
     statusUpdate(currUsername, oppUsername, totalCurrAtt);
     opphp -= totalCurrAtt;
     $("#opphp").html(opphp);
-    toggleActive();
-    isAnimated(currweapon);
-    isAnimated(oppweapon);
+
+    if(opphp <= 0){
+      clearInterval(timerId);
+      opphp = 0;
+      $("#opphp").html(opphp);
+      whoWinner(opphp, oppUsername);
+    }else{
+      toggleActive();
+      isAnimated(currweapon);
+      isAnimated(oppweapon);
+    }
   }
 }
 
-function startBattle(opponentHP, currentUserHP){
+function startBattle(){
     timerId = setInterval(decrementHp, 2000);
-    if(opponentHP <= 0){
-      opponentHP = 0;
-      clearInterval(timerId);
-    }
-    if(currentUserHP <= 0){
-      currentUserHP = 0;
-      clearInterval(timerId);
-    }
 }
 
 
@@ -105,5 +114,5 @@ var firstUser = $("#oppUsername").html();
 $('#middleInfo .fightStatus').html(firstUser + " goes first");
 
 
-startBattle(opphp, currhp);
+startBattle();
 });
