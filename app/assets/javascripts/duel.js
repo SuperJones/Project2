@@ -8,22 +8,10 @@ var currUsername = $("#currUsername").html();
 var oppweapon = $('#oppweapon');
 var currweapon = $('#currweapon');
 
+//get hp
+var currhp = parseInt($("#currhp").html());
+var opphp = parseInt($("#opphp").html());
 
-
-//Add Animation for active
-// function isAnimated(){
-//   if(oppweapon.hasClass("active")){
-//     oppweapon.addClass('animated infinite pulse');
-//   }else{
-//     oppweapon.removeClass('animated infinite pulse');
-//   }
-//
-//   if(currweapon.hasClass("active")){
-//     currweapon.addClass('animated infinite pulse');
-//   }else{
-//     currweapon.removeClass('animated infinite pulse');
-//   }
-// }
 
 function isAnimated(weapon){
   var classname = 'animated infinite pulse';
@@ -40,6 +28,26 @@ function toggleActive(){
     currweapon.toggleClass('active');
 }
 
+//Test if someones hp is equal to 0
+function whoWinner(opponentHP, currentUserHP){
+  if (opponentHP === 0 || currentUserHP === 0){
+    $('#middleInfo p:last').after("<p class='winner'></p>");
+  }
+  if(opponentHP === 0){
+    $('#middleInfo p:last').append(oppUsername + " WINS!!");
+  }else{
+    $('#middleInfo p:last').append(currUsername + " WINS!!");
+  }
+}
+
+function statusUpdate(username1, username2, user1Att){
+  //opponent attacks current_user
+  $('#middleInfo p:last').after("<p></p>");
+  $('#middleInfo p:last').append(username1 + " ATTACKS " + username2);
+  //update status in the middle
+  $('#middleInfo p:last').after("<p></p>");
+  $('#middleInfo p:last').append(username2 + " loses "+ user1Att + " health points");
+}
 
 function decrementHp(){
   // if opponent is active then decrement current_user hp
@@ -47,35 +55,45 @@ function decrementHp(){
     var currhp = parseInt($("#currhp").html());
     var oppWeaponAtt = parseInt($("#oppWeaponAtt").html());
     var totalOppAtt = oppWeaponAtt;
-    alert("The current users hp equals " + currhp);
+    statusUpdate(oppUsername, currUsername, totalOppAtt);
     currhp -= totalOppAtt;
     $("#currhp").html(currhp);
     toggleActive();
     isAnimated(oppweapon);
     isAnimated(currweapon);
-    //update status in the middle
-    $('#middleInfo p:last').after("<p></p>");
-    $('#middleInfo p:last').append(currUsername + " loses " + totalOppAtt +" points");
-    toggleActive();
 
   // else current_user is active so decrement opponents hp
   }else{
     var opphp = parseInt($("#opphp").html());
     var currWeaponAtt = parseInt($("#currWeaponAtt").html());
-    var totatCurrAtt = currWeaponAtt;
-    alert("The current users hp equals " + opphp);
+    var totalCurrAtt = currWeaponAtt;
+    statusUpdate(currUsername, oppUsername, totalCurrAtt);
     opphp -= totalCurrAtt;
     $("#opphp").html(opphp);
     toggleActive();
     isAnimated(currweapon);
     isAnimated(oppweapon);
-    //update status in the middle
-    $('#middleInfo p:last').after("<p></p>");
-    $('#middleInfo p:last').append(oppUsername + " loses "+totalCurrAtt + " health points");
-    toggleActive();
 
   }
 }
+
+function startBattle(opponentHP, currentUserHP){
+  if(opponentHP > 0 || currentUserHP > 0){
+    console.log("Opponent is " + opponentHP + " and Current is " + currentUserHP);
+    timerId = setTimeout(decrementHp, 3000);
+
+  }else{
+    if(opponentHP <= 0){
+      opponentHP = 0;
+      clearInterval(timerId);
+    }
+    if(currentUserHP <= 0){
+      currentUserHP = 0;
+      clearInterval(timerId);
+    }
+  }
+}
+
 
 
 // Initiat opponent with active and Add animation to active user
@@ -85,10 +103,6 @@ isAnimated(oppweapon);
 // say who is the first to attack
 $('#middleInfo .fightStatus').html(oppUsername + " goes first");
 
-//opponent attacks current_user
-$('#middleInfo p:last').after("<p></p>");
-$('#middleInfo p:last').append(oppUsername + " ATTACKS " + currUsername);
 
-decrementHp();
-
+startBattle(opphp, currhp);
 });
