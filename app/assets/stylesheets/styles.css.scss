@@ -11,9 +11,9 @@ $currGlow: rgb(83, 250, 15);
 
           /* ============UNIVERSAL============ */
 
-*{
-  outline: 1px solid red;
-}
+// *{
+//   outline: 1px solid red;
+// }
 body {
   padding-top: auto;
   color: $basefont;
@@ -234,16 +234,20 @@ body {
 }
 
 
-  // .active img{
-  //   -moz-box-shadow: 0px 0px 15px $oppGlow;
-  //   -webkit-box-shadow: 0px 0px 15px $oppGlow;
-  //   box-shadow: 0px 0px 15px $oppGlow;
-  // }
-
-  #currweapon {
-    .active{
-      -moz-box-shadow: 0px 0px 15px $currGlow;
-      -webkit-box-shadow: 0px 0px 15px $currGlow;
-      box-shadow: 0px 0px 15px $currGlow;
-    }
+.opponentUser{
+  padding-top: 10px;
+    img{
+      -moz-box-shadow: 0px 0px 15px $oppGlow;
+      -webkit-box-shadow: 0px 0px 15px $oppGlow;
+      box-shadow: 0px 0px 15px $oppGlow;
   }
+}
+
+.currentUser {
+  padding-top: 10px;
+  img{
+    -moz-box-shadow: 0px 0px 15px $currGlow;
+    -webkit-box-shadow: 0px 0px 15px $currGlow;
+    box-shadow: 0px 0px 15px $currGlow;
+  }
+}
