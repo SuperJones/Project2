@@ -2,10 +2,19 @@
     <div class='row'>
             <!-- Side Bar -->
         <div class='col-sm-3 col-xs-5 sidebar'>
+            <!-- TODO: make search go to searched users show page -->
             <!-- Searh Bar -->
             <div class="input-group search">
-                <input type="search" name="usersearch" placeholder="Enter a Username" class="form-control" >
-                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+                <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Username", class:'searchBox' %>
+                <%= submit_tag "Search", class: 'searchButton' %>
+                <% end %>
+
+                <% if @users.present? %>
+                <%= render @users %>
+                <% else %>
+                <p>There are no users containing the term(s) <%= params[:search] %>.</p>
+                <% end %>
             </div>
             <div class="instructions">
                 <h4>How to Play</h4>

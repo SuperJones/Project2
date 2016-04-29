@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+    where("username ILIKE ?", "%#{search}%")
+  end
+
     # after_create :generate_inventory
 
     # def generate_inventory

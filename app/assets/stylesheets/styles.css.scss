@@ -88,15 +88,15 @@ body {
       -webkit-box-shadow: 0px 0px 5px  $accentColor;
       -moz-box-shadow: 0px 0px 5px  $accentColor;
     box-shadow: 0px 0px 5px  $accentColor;
-    .input-group{
-      -webkit-box-shadow: 0px 0px 10px  $accentColor;
-      -moz-box-shadow: 0px 0px 10px  $accentColor;
-    box-shadow: 0px 0px 10px  $accentColor;
-    }
-    .input-group-addon {
-      background: $accentColor;
-      color: white;
-    }
+    // .input-group{
+    //   -webkit-box-shadow: 0px 0px 10px  $accentColor;
+    //   -moz-box-shadow: 0px 0px 10px  $accentColor;
+    // box-shadow: 0px 0px 10px  $accentColor;
+    // }
+    // .input-group-addon {
+    //   background: $accentColor;
+    //   color: white;
+    // }
 }
 
 .instructions{
@@ -112,6 +112,24 @@ body {
 
 .search{
     margin-top: 20px;
+    .searchButton{
+      background-color: $accentColor !important;
+      color: $backgrd !important;
+      padding:5px;
+      border:2px solid $accentColor;
+        -webkit-border-radius: 5px;
+      border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 10px  $accentColor;
+        -moz-box-shadow: 0px 0px 10px  $accentColor;
+      box-shadow: 0px 0px 10px  $accentColor;
+    }
+    .searchBox{
+      border: none;
+      height: 30px;
+        -webkit-box-shadow: 0px 0px 10px  $accentColor;
+        -moz-box-shadow: 0px 0px 10px  $accentColor;
+      box-shadow: 0px 0px 10px  $accentColor;
+    }
 }
 
 .chunk{
