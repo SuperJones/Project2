@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def duel
     @current_user = current_user
-    @currweapon = Weapon.find(@current_user.inventory.weapon_id)
+    @currweapon = Weapon.find(current_user.inventory.weapon_id)
     @opponent = User.find(params[:opponent])
     @oppweapon = Weapon.find(@opponent.inventory.weapon_id)
   end

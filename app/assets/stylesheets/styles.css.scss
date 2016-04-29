@@ -24,13 +24,7 @@ body {
     background: linear-gradient(rgb(53, 54, 54), $backgrd); /* Standard syntax */
 }
 
-input {
-  color: $backgrd;
-}
-select{
-  color: $backgrd;
-  padding-bottom: 10px;
-}
+
 
 .header-boarder{
     background-color: $backgrd;
@@ -173,7 +167,19 @@ select{
     border-color: $basefont !important;
 }
 
-
+          /*============FORM Page============*/
+.form{
+  text-align: center;
+  .actions{
+    padding-top: 10px;
+  }
+}
+input {
+  color: $backgrd;
+}
+select{
+  color: $backgrd;
+}
 
           /*============USER SHOW Page============*/
 .profile{
