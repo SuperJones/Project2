@@ -1,12 +1,12 @@
-<div class="row">
-  <div class="col-md-12 duelTitle">
+<div class="row topDuelRow">
+  <div class="col-md-12 duelTitle chunk">
     <h2>Time to Duel!!</h2>
   </div>
 </div>
 
 <div class="row battle">
   <!-- TODO: track wins -->
-  <div class="col-md-3 currentUser">
+  <div class="col-md-3 currentUser chunk">
     <%= image_tag @current_user.photo_url%>
     <p id="currUsername"><%= @current_user.username %></p>
     <p>
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div class="col-md-3 opponentUser">
+  <div class="col-md-3 opponentUser chunk">
     <%= image_tag @opponent.photo_url%>
     <p id="oppUsername"><%= @opponent.username %></p>
     <p>

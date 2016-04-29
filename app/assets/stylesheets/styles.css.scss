@@ -1,4 +1,3 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -29,7 +28,6 @@ body {
     background-color: $backgrd;
     height: 150px;
     padding: 0 auto;
-    margin-right: 15px;
     margin-left: 15px;
     margin-bottom: 20px;
       -webkit-border-bottom-left-radius: 8px;
@@ -180,9 +178,20 @@ body {
 
           /* ============ DUEL Page ============  */
 
+.topDuelRow{
+  margin-right: 14px;
+}
+.battle{
+  margin-left: 16px;
+}
+
 .duelTitle{
+  margin-left: 28px;
+  margin-bottom: 30px;
   text-align: center;
-  margin: 20px 0px 20px 0px;
+  h2{
+    margin: 20px 20px 20px 30px;
+  }
 }
 
 .battle{
@@ -193,8 +202,10 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
 
 #currentUser{
+  margin-left: 20px;
   h5{
     font-weight: bold;
   }
@@ -213,6 +224,7 @@ body {
 }
 
 #opponentUser{
+  margin-right: 5px;
   h5{
     font-weight: bold;
   }
@@ -222,14 +234,16 @@ body {
 }
 
 
-#oppweapon .active img{
-    -moz-box-shadow: 0px 0px 15px rgb(255, 131, 0);
-    -webkit-box-shadow: 0px 0px 15px rgb(255, 131, 0);
-  box-shadow: 0px 0px 15px rgb(255, 131, 0);
-}
+  // .active img{
+  //   -moz-box-shadow: 0px 0px 15px $oppGlow;
+  //   -webkit-box-shadow: 0px 0px 15px $oppGlow;
+  //   box-shadow: 0px 0px 15px $oppGlow;
+  // }
 
-#currweapon .active img{
-    -moz-box-shadow: 0px 0px 15px rgb(83, 250, 15);
-    -webkit-box-shadow: 0px 0px 15px rgb(83, 250, 15);
-  box-shadow: 0px 0px 15px rgb(83, 250, 15);
-}
+  #currweapon {
+    .active{
+      -moz-box-shadow: 0px 0px 15px $currGlow;
+      -webkit-box-shadow: 0px 0px 15px $currGlow;
+      box-shadow: 0px 0px 15px $currGlow;
+    }
+  }
