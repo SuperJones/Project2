@@ -24,6 +24,14 @@ body {
     background: linear-gradient(rgb(53, 54, 54), $backgrd); /* Standard syntax */
 }
 
+input {
+  color: $backgrd;
+}
+select{
+  color: $backgrd;
+  padding-bottom: 10px;
+}
+
 .header-boarder{
     background-color: $backgrd;
     height: 150px;
@@ -41,6 +49,7 @@ body {
     box-shadow: 0px 0px 5px  $accentColor;
     text-align: center;
     .login{
+
       li{
         list-style: none;
 
