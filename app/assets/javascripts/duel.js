@@ -53,6 +53,8 @@ function ranNum(){
 function decrementHp(){
   var oppUsername = $("#oppUsername").html();
   var currUsername = $("#currUsername").html();
+  var oppweapon = $('#oppweapon');
+  var currweapon = $('#currweapon');
 
   // if opponent is active then decrement current_user hp
   if(oppweapon.hasClass("active")){
@@ -76,12 +78,18 @@ function decrementHp(){
       currhp = 0;
       $("#currhp").html(currhp);
       whoWinner(currhp, currUsername);
+      toggleActive();
+      oppweapon.removeClass('animated infinite pulse');
+      currweapon.removeClass('animated infinite pulse');
+      currweapon.addClass('animated infinite tada');
+      oppweapon.addClass('animated hinge');
     //else switch to the other user.
     }else{
       toggleActive();
       isAnimated(oppweapon);
       isAnimated(currweapon);
     }
+
 
   // else current_user is active so decrement opponents hp
   }else{
@@ -100,11 +108,18 @@ function decrementHp(){
       opphp = 0;
       $("#opphp").html(opphp);
       whoWinner(opphp, oppUsername);
+      toggleActive();
+      currweapon.removeClass('animated infinite pulse');
+      oppweapon.removeClass('animated infinite pulse');
+      oppweapon.addClass('animated infinite tada');
+      currweapon.addClass('animated hinge');
     }else{
       toggleActive();
       isAnimated(currweapon);
       isAnimated(oppweapon);
     }
+
+
   }
 }
 
