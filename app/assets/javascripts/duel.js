@@ -77,12 +77,12 @@ function decrementHp(){
       clearInterval(timerId);
       currhp = 0;
       $("#currhp").html(currhp);
-      whoWinner(currhp, currUsername);
+      whoWinner(currhp, oppUsername);
       toggleActive();
-      oppweapon.removeClass('animated infinite pulse');
       currweapon.removeClass('animated infinite pulse');
-      currweapon.addClass('animated infinite tada');
-      oppweapon.addClass('animated hinge');
+      oppweapon.removeClass('animated infinite pulse');
+      oppweapon.addClass('animated infinite tada');
+      currweapon.addClass('animated hinge');
     //else switch to the other user.
     }else{
       toggleActive();
@@ -107,12 +107,12 @@ function decrementHp(){
       clearInterval(timerId);
       opphp = 0;
       $("#opphp").html(opphp);
-      whoWinner(opphp, oppUsername);
+      whoWinner(opphp, currUsername);
       toggleActive();
-      currweapon.removeClass('animated infinite pulse');
       oppweapon.removeClass('animated infinite pulse');
-      oppweapon.addClass('animated infinite tada');
-      currweapon.addClass('animated hinge');
+      currweapon.removeClass('animated infinite pulse');
+      currweapon.addClass('animated infinite tada');
+      oppweapon.addClass('animated hinge');
     }else{
       toggleActive();
       isAnimated(currweapon);
