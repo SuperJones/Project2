@@ -21,3 +21,15 @@
 
 #### Platinum:
 - As a user, I should be able to check my points while I am walking/running, to motivate me to take more steps.
+
+####UX
+# What decision have been made based off research?
+- Make logo with gold font and one (or more) of the background colors red, black, or blue.
+- User should receive a prize for winning a battle
+- Instructions should be clear and happen as needed.
+- There should be a reference page just in case the user skipped through the instructions or needs a reminder.
+- I can have more than one menu.
+- Icons for weapons attack and defence reinforces understanding of weapon details.
+- Major buttons, like buy, make, sell, should be highlighted and attention drawing.
+- A level up bar should be added and a hp bar should be added during battle.
+- Minimal and organized is best. 
